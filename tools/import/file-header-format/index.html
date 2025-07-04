@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+   <head><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app224.us.archive.org';v.server_ms=679;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/","20240918041714","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1726633034");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A" />
+<!-- End Wayback Rewrite JS Include -->
+
+      <meta charset="utf-8"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <title>11.6.2.&nbsp;CSV file header format - 11.6.&nbsp;Import</title>
+      <link rel="stylesheet" type="text/css" href="/web/20240918041714cs_/https://neo4j.com/docs/operations-manual/3.4/docbook.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20240918041714cs_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20240918041714cs_/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20240918041714cs_/https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,300italic"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20240918041714cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20240918041714cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/theme/neo.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20240918041714cs_/https://neo4j.com/docs/operations-manual/3.4/css/extra.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20240918041714cs_/https://neo4j.com/docs/operations-manual/3.4/css/chunked-base.css"></link><script src="//web.archive.org/web/20240918041714js_/https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/addon/runmode/runmode.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/javascript/javascript.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/shell/shell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/powershell/powershell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/python/python.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/xml/xml.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/clike/clike.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/cypher/cypher.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/properties/properties.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/groovy/groovy.min.js" type="text/javascript"></script><script src="/web/20240918041714js_/https://neo4j.com/docs/operations-manual/3.4/javascript/colorize.js" type="text/javascript"></script><script src="/web/20240918041714js_/https://neo4j.com/docs/operations-manual/3.4/javascript/tabs-for-chunked.js" type="text/javascript"></script><script src="/web/20240918041714js_/https://neo4j.com/docs/operations-manual/3.4/javascript/mp-nav.js" type="text/javascript"></script><script src="/web/20240918041714js_/https://neo4j.com/docs/operations-manual/3.4/javascript/versionswitcher.js" type="text/javascript"></script><script src="/web/20240918041714js_/https://neo4j.com/docs/operations-manual/3.4/javascript/version.js" type="text/javascript"></script><script src="//web.archive.org/web/20240918041714js_/https://s3-eu-west-1.amazonaws.com/alpha.neohq.net/docs/new-manual/assets/search.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></meta>
+      <meta name="description" content="This section explains the header format of CSV files when using the Neo4j import tool."></meta>
+      <link rel="prev" href="/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/syntax/" title="11.6.1. Syntax"></link>
+      <link rel="next" href="/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/options/" title="11.6.3. Options"></link>
+      <link rel="shortcut icon" href="https://web.archive.org/web/20240918041714im_/https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico"></link><script>
+        $(document).ready(function() {
+          CodeMirror.colorize();
+          tabTheSource($('body'));
+          var $header = $('header').first();
+          $header.prepend(
+            $('<a href="../../../" id="logo"><img src="https://web.archive.org/web/20240918041714/https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png" alt="Neo4j Logo"></img></a>')
+          );
+          var $sidebar = $('<div id="sidebar-wrapper"></div>');
+          $.get('toc.html', function (d){
+            $(d).appendTo($sidebar);
+            highlightToc();
+            highlightLibraryHeader();
+          });
+          $sidebar.insertAfter($('header').first());
+        });
+        </script></head>
+   <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;" toolbar-mode="auto">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20240918041714/https%3A//neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20240918041714" /><input type="submit" value="Go" />
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;">
+                    <a class="t" href="/web/20240918041714*/https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/" title="See a list of every capture for this URL">1 capture</a>
+          <div class="r" title="Timespan for captures of this URL">18 Sep 2024</div>
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap">Aug</td>
+            <td class="c" id="displayMonthEl" title="You are here: 04:17:14 Sep 18, 2024">SEP</td>
+            <td class="f" nowrap="nowrap">Oct</td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" /></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 04:17:14 Sep 18, 2024">18</td>
+            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0" /></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2023</td>
+            <td class="c" id="displayYearEl" title="You are here: 04:17:14 Sep 18, 2024">2024</td>
+            <td class="f" nowrap="nowrap">2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive" >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="/web/20240918041714/http://web.archive.org/screenshot/https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/"
+           id="wm-screenshot"
+           title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/save-page-now)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/save-page-now" target="_new"><span class="wm-title">Save Page Now</span></a></div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/tools/import/file-header-format/","20240918041714",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A","https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+      <header>
+         <div class="searchbox">
+            <form id="search-form" class="search" name="search-form" role="search"><input id="search-form-input" name="q" title="search" type="search" lang="en" placeholder="Search Neo4j docs..." aria-label="Search Neo4j documentation" max-length="128" required="required"></input><input id="search-form-button" type="submit" value="Search"></input></form>
+         </div>
+         <ul class="documentation-library">
+            <li><a href="https://web.archive.org/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/">Operations Manual</a></li>
+            <li><a href="https://web.archive.org/web/20240918041714/https://neo4j.com/docs/developer-manual/3.4/">Developer Manual</a></li>
+            <li><a href="https://web.archive.org/web/20240918041714/https://neo4j.com/docs/ogm-manual/3.0/">OGM Manual</a></li>
+            <li><a href="https://web.archive.org/web/20240918041714/https://neo4j.com/docs/graph-algorithms/3.4/">Graph Algorithms</a></li>
+            <li><a href="https://web.archive.org/web/20240918041714/https://neo4j.com/docs/java-reference/3.4/">Java Reference</a></li>
+         </ul>
+         <nav id="header-nav"><span class="nav-previous"><a accesskey="p" href="/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/syntax/"><span class="fa fa-long-arrow-left" aria-hidden="true"></span>Syntax</a></span><span class="nav-current">
+               <p class="nav-title hidden">11.6.2.&nbsp;CSV file header format</p></span><span class="nav-next"><a accesskey="n" href="/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/options/">Options<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a></span></nav>
+      </header>
+      <div id="search-results" class="hidden"></div>
+      <section class="section" id="import-tool-header-format">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h3 class="title"><a class="anchor" href="#import-tool-header-format"></a>11.6.2.&nbsp;CSV file header format
+                  </h3>
+               </div>
+            </div>
+         </div>
+         <div class="abstract">
+            <p>This section explains the header format of CSV files when using the Neo4j import tool.</p>
+         </div>
+         <p>This section describes the following:</p>
+         <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+               <li class="listitem"><a class="link" href="#import-tool-header-format-header-files" title="11.6.2.1. Header files">Header files</a></li>
+               <li class="listitem"><a class="link" href="#import-tool-header-format-properties" title="11.6.2.2. Properties">Properties</a></li>
+               <li class="listitem"><a class="link" href="#import-tool-header-format-nodes" title="11.6.2.3. Node files">Node files</a></li>
+               <li class="listitem"><a class="link" href="#import-tool-header-format-rels" title="11.6.2.4. Relationship files">Relationship files</a></li>
+               <li class="listitem"><a class="link" href="#import-tool-id-spaces" title="11.6.2.5. Using ID spaces">Using ID spaces</a></li>
+               <li class="listitem"><a class="link" href="#import-tool-header-format-skip-columns" title="11.6.2.6. Skipping columns">Skipping columns</a></li>
+               <li class="listitem"><a class="link" href="#import-tool-header-format-compressed-files" title="11.6.2.7. Import compressed files">Compressed files</a></li>
+            </ul>
+         </div>
+         <section class="section" id="import-tool-header-format-header-files">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h4 class="title"><a class="anchor" href="#import-tool-header-format-header-files"></a>11.6.2.1.&nbsp;Header files
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            <p>The header file of each data source specifies how the data fields should be interpreted.
+               You must use the same delimiter for the header file and for the data files.
+            </p>
+            <p>The header contains information for each field, with the format <code class="literal">&lt;name&gt;:&lt;field_type&gt;</code>.
+               The <code class="literal">&lt;name&gt;</code> is used for properties and node IDs.
+               In all other cases, the <code class="literal">&lt;name&gt;</code> part of the field is ignored.
+            </p>
+         </section>
+         <section class="section" id="import-tool-header-format-properties">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h4 class="title"><a class="anchor" href="#import-tool-header-format-properties"></a>11.6.2.2.&nbsp;Properties
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            <p>For properties, the <code class="literal">&lt;name&gt;</code> part of the field designates the property key, while the <code class="literal">&lt;field_type&gt;</code> part assigns a data type (see below).
+               You can have properties in both node data files and relationship data files.
+            </p>
+            <div class="variablelist">
+               <dl class="variablelist">
+                  <dt><span class="term">Data types</span></dt>
+                  <dd>
+                     <p class="simpara">Use one of <code class="literal">int</code>, <code class="literal">long</code>, <code class="literal">float</code>, <code class="literal">double</code>, <code class="literal">boolean</code>, <code class="literal">byte</code>, <code class="literal">short</code>, <code class="literal">char</code>, <code class="literal">string</code>, <code class="literal">point</code>, <code class="literal">date</code>, <code class="literal">localtime</code>, <code class="literal">time</code>, <code class="literal">localdatetime</code>,
+                        <code class="literal">datetime</code>, and <code class="literal">duration</code> to designate the data type for properties.
+                        If no data type is given, this defaults to <code class="literal">string</code>.
+                        To define an array type, append <code class="literal">[]</code> to the type.
+                        By default, array values are separated by <code class="literal">;</code>.
+                        A different delimiter can be specified with <code class="literal">--array-delimiter</code>.
+                        Boolean values are <span class="emphasis"><em>true</em></span> if they match exactly the text <code class="literal">true</code>. All other values are <span class="emphasis"><em>false</em></span>.
+                        Values that contain the delimiter character need to be escaped by enclosing in double quotation marks, or by using a different
+                        delimiter character with the <code class="literal">--delimiter</code> option.
+                     </p>
+                     <div class="example" id="d0e21363">
+                        <div class="example-title">Example&nbsp;11.6.&nbsp;Header format with data types</div>
+                        <div class="example-contents">
+                           <p>This example illustrates several different data types specified in the CSV header.</p><pre class="programlisting highlight"><code data-lang="csv">:ID,name,joined:date,active:boolean,points:int
+user01,Joe Soap,2017-05-05,true,10
+user02,Jane Doe,2017-08-21,true,15
+user03,Moe Know,2018-02-17,false,7</code></pre></div>
+                     </div>
+                  </dd>
+                  <dt><span class="term">Special considerations for the <code class="literal">point</code> data type</span></dt>
+                  <dd>
+                     <p class="simpara">A point is specified using the Cypher syntax for maps.
+                        The map allows the same keys as the input to the <span class="olink">Cypher point function</span>.
+                        The point data type in the header can be amended with a map of default values used for all values of that column, e.g. <code class="literal">point{crs: 'WGS-84'}</code>.
+                        Specifying the header this way allows you to have an incomplete map in the value position in the data file.
+                        Optionally, a value in a data file may override default values from the header.
+                     </p>
+                     <div class="example" id="d0e21385">
+                        <div class="example-title">Example&nbsp;11.7.&nbsp;Property format for <code class="literal">point</code> data type
+                        </div>
+                        <div class="example-contents">
+                           <p>This example illustrates various ways of using the <code class="literal">point</code> data type in the import header and the data files.
+                           </p>
+                           <p>We are going to import the name and location coordinates for cities.
+                              First, we define the header as:
+                           </p><pre class="programlisting highlight"><code data-lang="csv">:ID,name,location:point{crs:WGS-84}</code></pre><p>We then define cities in the data file.</p>
+                           <div class="itemizedlist">
+                              <ul style="list-style-type: disc; " class="itemizedlist">
+                                 <li class="listitem">The first city&#8217;s location is defined using <code class="literal">latitude</code> and <code class="literal">longitude</code>, as expected when using the coordinate system defined in the header.
+                                 </li>
+                                 <li class="listitem">The second city uses <code class="literal">x</code> and <code class="literal">y</code> instead.
+                                    This would normally lead to a point using the coordinate reference system <code class="literal">cartesian</code>.
+                                    Since the header defines <code class="literal">crs:WGS-84</code>, that coordinate reference system will be used.
+                                 </li>
+                                 <li class="listitem">The third city overrides the coordinate reference system defined in the header, and sets it explicitly to <code class="literal">WGS-84-3D</code>.
+                                 </li>
+                              </ul>
+                           </div><pre class="programlisting highlight"><code data-lang="csv">:ID,name,location:point{crs:WGS-84}
+city01,"Malm&ouml;","{latitude:55.6121514, longitude:12.9950357}"
+city02,"London","{y:51.507222, x:-0.1275}"
+city03,"San Mateo","{latitude:37.554167, longitude:-122.313056, height: 100, crs:'WGS-84-3D'}"</code></pre><p>Note that all point maps are within double quotation marks <code class="literal">"</code> in order to prevent the enclosed <code class="literal">,</code> character from being interpreted as a column separator.
+                              An alternative approach would be to use <code class="literal">--delimiter='\t'</code> and reformat the file with tab separators, in which case the <code class="literal">"</code> characters are not required.
+                           </p><pre class="programlisting highlight"><code data-lang="csv">:ID name    location:point{crs:WGS-84}
+city01  Malm&ouml;   {latitude:55.6121514, longitude:12.9950357}
+city02  London  {y:51.507222, x:-0.1275}
+city03  San Mateo   {latitude:37.554167, longitude:-122.313056, height: 100, crs:'WGS-84-3D'}</code></pre></div>
+                     </div>
+                  </dd>
+                  <dt><span class="term">Special considerations for temporal data types</span></dt>
+                  <dd>
+                     <p class="simpara">The format for all temporal data types must be defined as described in <span class="olink">Developer manual &#8594; Temporal instants syntax</span> and <span class="olink">Developer manual &#8594; Durations syntax</span>.
+                        Two of the temporal types, <span class="emphasis"><em>Time</em></span> and <span class="emphasis"><em>DateTime</em></span>, take a time zone parameter which might be common between all or many of the values in the data file.
+                        It is therefor possible to specify a default time zone for <span class="emphasis"><em>Time</em></span> and <span class="emphasis"><em>DateTime</em></span> values in the header, for example: <code class="literal">time{timezone:+02:00}</code> and: <code class="literal">datetime{timezone:Europe/Stockholm}</code>.
+                        If no default time zone is specified, the default timezone is determined by the <code class="literal"><a class="link" href="/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_db.temporal.timezone" title="Table A.93. db.temporal.timezone">db.temporal.timezone</a></code> configuration setting.
+                        The default time zone can be explicitly overridden in the values in the data file.
+                     </p>
+                     <div class="example" id="d0e21485">
+                        <div class="example-title">Example&nbsp;11.8.&nbsp;Property format for temporal data types</div>
+                        <div class="example-contents">
+                           <p>This example illustrates various ways of using the <code class="literal">datetime</code> data type in the import header and the data files.
+                           </p>
+                           <p>First, we define the header with two <span class="emphasis"><em>DateTime</em></span> columns.
+                              The first one defines a time zone, but the second one does not:
+                           </p><pre class="programlisting highlight"><code data-lang="csv">:ID,date1:datetime{timezone:Europe/Stockholm},date2:datetime</code></pre><p>We then define dates in the data file.</p>
+                           <div class="itemizedlist">
+                              <ul style="list-style-type: disc; " class="itemizedlist">
+                                 <li class="listitem">The first row has two values that do not specify an explicit timezone.
+                                    The value for <code class="literal">date1</code> will use the <code class="literal">Europe/Stockholm</code> time zone that was specified for that field in the header.
+                                    The value for <code class="literal">date2</code> will use the configured default time zone of the database.
+                                 </li>
+                                 <li class="listitem">In the second row, both <code class="literal">date1</code> and <code class="literal">date2</code> set the time zone explicitly to be <code class="literal">Europe/Berlin</code>.
+                                    This overrides the header definition for <code class="literal">date1</code>, as well as the configured default time zone of the database.
+                                 </li>
+                              </ul>
+                           </div><pre class="programlisting highlight"><code data-lang="csv">1,2018-05-10T10:30,2018-05-10T12:30
+2,2018-05-10T10:30[Europe/Berlin],2018-05-10T12:30[Europe/Berlin]</code></pre></div>
+                     </div>
+                  </dd>
+               </dl>
+            </div>
+         </section>
+         <section class="section" id="import-tool-header-format-nodes">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h4 class="title"><a class="anchor" href="#import-tool-header-format-nodes"></a>11.6.2.3.&nbsp;Node files
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            <p>For files containing node data, there is one mandatory field; the <code class="literal">ID</code>, and one optional field; the <code class="literal">LABEL</code>:
+            </p>
+            <div class="variablelist">
+               <dl class="variablelist">
+                  <dt><span class="term">ID</span></dt>
+                  <dd>Each node must have a unique ID which is used during the import.
+                     The IDs are used to find the correct nodes when creating relationships.
+                     Note that the ID has to be unique across all nodes in the import; even for nodes with different labels.
+                     The unique ID can be persisted in a property whose name is defined by the <code class="literal">&lt;name&gt;</code> part of the field definition <code class="literal">&lt;name&gt;:ID</code>.
+                     If no such property name is defined, the unique ID will be used for the purpose of the import but not be available for reference
+                     later.
+                  </dd>
+                  <dt><span class="term">LABEL</span></dt>
+                  <dd>Read one or more labels from this field.
+                     Like array values, multiple labels are separated by <code class="literal">;</code>, or by the character specified with <code class="literal">--array-delimiter</code>.
+                  </dd>
+               </dl>
+            </div>
+            <div class="example" id="d0e21568">
+               <div class="example-title">Example&nbsp;11.9.&nbsp;Define nodes files</div>
+               <div class="example-contents">
+                  <p>We define the headers for movies in the <span class="emphasis"><em>movies_header.csv</em></span> file.
+                     Movies have the properties <code class="literal">movieId</code>, <code class="literal">year</code> and <code class="literal">title</code>.
+                     We also specify a field for labels.
+                  </p><pre class="programlisting highlight"><code data-lang="csv">movieId:ID,title,year:int,:LABEL</code></pre><p>We define three movies in the <span class="emphasis"><em>movies.csv</em></span> file.
+                     They contain all the properties defined in the header file.
+                     All the movies are given the label <code class="literal">Movie</code>.
+                     Two of them are also given the label <code class="literal">Sequel</code>.
+                  </p><pre class="programlisting highlight"><code data-lang="csv">tt0133093,"The Matrix",1999,Movie
+tt0234215,"The Matrix Reloaded",2003,Movie;Sequel
+tt0242653,"The Matrix Revolutions",2003,Movie;Sequel</code></pre><p>Similarly, we also define three actors in the <span class="emphasis"><em>actors_header.csv</em></span> and <span class="emphasis"><em>actors.csv</em></span> files.
+                     They all have the properties <code class="literal">personId</code> and <code class="literal">name</code>, and the label <code class="literal">Actor</code>.
+                  </p><pre class="programlisting highlight"><code data-lang="csv">personId:ID,name,:LABEL</code></pre><pre class="programlisting highlight"><code data-lang="csv">keanu,"Keanu Reeves",Actor
+laurence,"Laurence Fishburne",Actor
+carrieanne,"Carrie-Anne Moss",Actor</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="import-tool-header-format-rels">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h4 class="title"><a class="anchor" href="#import-tool-header-format-rels"></a>11.6.2.4.&nbsp;Relationship files
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            <p>For files containing relationship data, there are three mandatory fields:</p>
+            <div class="variablelist">
+               <dl class="variablelist">
+                  <dt><span class="term">TYPE</span></dt>
+                  <dd>The relationship type to use for this relationship.</dd>
+                  <dt><span class="term">START_ID</span></dt>
+                  <dd>The ID of the start node for this relationship.</dd>
+                  <dt><span class="term">END_ID</span></dt>
+                  <dd>The ID of the end node for this relationship.</dd>
+               </dl>
+            </div>
+            <p>The <code class="literal">START_ID</code> and <code class="literal">END_ID</code> refer to the unique node ID defined in one of the node data sources, as explained in the previous section.
+               None of these takes a name, e.g. if <code class="literal">&lt;name&gt;:START_ID</code> or <code class="literal">&lt;name&gt;:END_ID</code> is defined, the <code class="literal">&lt;name&gt;</code> part will be ignored.
+            </p>
+            <div class="example" id="d0e21662">
+               <div class="example-title">Example&nbsp;11.10.&nbsp;Define relationships files</div>
+               <div class="example-contents">
+                  <p>In this example we assume that the two nodes files from the previous example are used together with the following relationships
+                     file.
+                  </p>
+                  <p>We define relationships between actors and movies in the files <span class="emphasis"><em>roles_header.csv</em></span> and <span class="emphasis"><em>roles.csv</em></span>.
+                     Each row connects a start node and an end node with a relationship of relationship type <code class="literal">ACTED_IN</code>.
+                     Notice how we use the unique identifiers <code class="literal">personId</code> and <code class="literal">movieId</code> from the nodes files above.
+                     The name of character that the actor is playing in this movie is stored as a <code class="literal">role</code> property on the relationship.
+                  </p><pre class="programlisting highlight"><code data-lang="csv">:START_ID,role,:END_ID,:TYPE</code></pre><pre class="programlisting highlight"><code data-lang="csv">keanu,"Neo",tt0133093,ACTED_IN
+keanu,"Neo",tt0234215,ACTED_IN
+keanu,"Neo",tt0242653,ACTED_IN
+laurence,"Morpheus",tt0133093,ACTED_IN
+laurence,"Morpheus",tt0234215,ACTED_IN
+laurence,"Morpheus",tt0242653,ACTED_IN
+carrieanne,"Trinity",tt0133093,ACTED_IN
+carrieanne,"Trinity",tt0234215,ACTED_IN
+carrieanne,"Trinity",tt0242653,ACTED_IN</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="import-tool-id-spaces">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h4 class="title"><a class="anchor" href="#import-tool-id-spaces"></a>11.6.2.5.&nbsp;Using ID spaces
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            <p>By default, the import tool assumes that node identifiers are unique across node files.
+               In many cases the ID is only unique across each entity file, for example when our CSV files contain data extracted from a
+               relational database and the ID field is pulled from the primary key column in the corresponding table.
+               To handle this situation we define <span class="emphasis"><em>ID spaces</em></span>.
+               ID spaces are defined in the <code class="literal">ID</code> field of node files using the syntax <code class="literal">ID(&lt;ID space identifier&gt;)</code>.
+               To reference an ID of an ID space in a relationship file, we use the syntax <code class="literal">START_ID(&lt;ID space identifier&gt;)</code> and <code class="literal">END_ID(&lt;ID space identifier&gt;)</code>.
+            </p>
+            <div class="example" id="d0e21711">
+               <div class="example-title">Example&nbsp;11.11.&nbsp;Define and use ID spaces</div>
+               <div class="example-contents">
+                  <p>Define a <code class="literal">Movie-ID</code> ID space in the <span class="emphasis"><em>movies_header.csv</em></span> file.
+                  </p><pre class="programlisting highlight"><code data-lang="csv">movieId:ID(Movie-ID),title,year:int,:LABEL</code></pre><pre class="programlisting highlight"><code data-lang="csv">1,"The Matrix",1999,Movie
+2,"The Matrix Reloaded",2003,Movie;Sequel
+3,"The Matrix Revolutions",2003,Movie;Sequel</code></pre><p>Define an <code class="literal">Actor-ID</code> ID space in the header of the <span class="emphasis"><em>actors_header.csv</em></span> file.
+                  </p><pre class="programlisting highlight"><code data-lang="csv">personId:ID(Actor-ID),name,:LABEL</code></pre><pre class="programlisting highlight"><code data-lang="csv">1,"Keanu Reeves",Actor
+2,"Laurence Fishburne",Actor
+3,"Carrie-Anne Moss",Actor</code></pre><p>Now use the previously defined ID spaces when connecting the actors to movies.</p><pre class="programlisting highlight"><code data-lang="csv">:START_ID(Actor-ID),role,:END_ID(Movie-ID),:TYPE</code></pre><pre class="programlisting highlight"><code data-lang="csv">1,"Neo",1,ACTED_IN
+1,"Neo",2,ACTED_IN
+1,"Neo",3,ACTED_IN
+2,"Morpheus",1,ACTED_IN
+2,"Morpheus",2,ACTED_IN
+2,"Morpheus",3,ACTED_IN
+3,"Trinity",1,ACTED_IN
+3,"Trinity",2,ACTED_IN
+3,"Trinity",3,ACTED_IN</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="import-tool-header-format-skip-columns">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h4 class="title"><a class="anchor" href="#import-tool-header-format-skip-columns"></a>11.6.2.6.&nbsp;Skipping columns
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            <div class="variablelist">
+               <dl class="variablelist">
+                  <dt><span class="term">IGNORE</span></dt>
+                  <dd>
+                     <p class="simpara">If there are fields in the data that we wish to ignore completely, this can be done using the <code class="literal">IGNORE</code> keyword in the header file.
+                        <code class="literal">IGNORE</code> must be prepended with a <code class="literal">:</code>.
+                     </p>
+                     <div class="example" id="d0e21763">
+                        <div class="example-title">Example&nbsp;11.12.&nbsp;Skip a column</div>
+                        <div class="example-contents">
+                           <p>In this example, we are not interested in the data in the third column of the nodes file and wish to skip over it.
+                              Note that the <code class="literal">IGNORE</code> keyword is prepended by a <code class="literal">:</code>.
+                           </p><pre class="programlisting highlight"><code data-lang="csv">personId:ID,name,:IGNORE,:LABEL</code></pre><pre class="programlisting highlight"><code data-lang="csv">keanu,"Keanu Reeves","male",Actor
+laurence,"Laurence Fishburne","male",Actor
+carrieanne,"Carrie-Anne Moss","female",Actor</code></pre></div>
+                     </div>
+                  </dd>
+               </dl>
+            </div>
+            <p>If all your superfluous data is placed in columns located to the right of all the columns that you wish to import, you can
+               instead use the command line option <code class="literal"><a class="link" href="/web/20240918041714/https://neo4j.com/docs/operations-manual/3.4/tools/import/options/#import-tool-option-ignore-extra-columns">--ignore-extra-columns</a></code>.
+            </p>
+         </section>
+         <section class="section" id="import-tool-header-format-compressed-files">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h4 class="title"><a class="anchor" href="#import-tool-header-format-compressed-files"></a>11.6.2.7.&nbsp;Import compressed files
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            <p>The import tool can handle files compressed with <code class="literal">zip</code> or <code class="literal">gzip</code>.
+               Each compressed file must contain a single file.
+            </p>
+            <div class="example" id="d0e21795">
+               <div class="example-title">Example&nbsp;11.13.&nbsp;Perform an import using compressed files</div>
+               <div class="example-contents"><pre class="programlisting highlight"><code data-lang="sh">neo4j_home$ ls import
+actors-header.csv  actors.csv.zip  movies-header.csv  movies.csv.gz  roles-header.csv  roles.csv.gz
+neo4j_home$ bin/neo4j-admin import --nodes import/movies-header.csv,import/movies.csv.gz --nodes import/actors-header.csv,import/actors.csv.zip --relationships import/roles-header.csv,import/roles.csv.gz</code></pre></div>
+            </div>
+         </section>
+      </section>
+      <footer><script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//web.archive.org/web/20240918041714/https://www.google-analytics.com/analytics.js','ga');
+          //Allow Linker
+          ga('create', 'UA-1192232-34','auto', {'allowLinker': true});
+          ga('send', 'pageview');
+          // Load the plugin.
+          ga('require', 'linker');
+          // Define which domains to autoLink.
+          ga('linker:autoLink', ['neo4j.org','neo4j.com','neotechnology.com','graphdatabases.com','graphconnect.com']);
+        </script><script type="text/javascript">
+          document.write(unescape("%3Cscript src='//web.archive.org/web/20240918041714/https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script>Munchkin.init('773-GON-065');</script></footer>
+   </body>
+</html><!--
+     FILE ARCHIVED ON 04:17:14 Sep 18, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:42:20 Jul 04, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.926
+  exclusion.robots: 0.039
+  exclusion.robots.policy: 0.024
+  esindex: 0.032
+  cdx.remote: 39.765
+  LoadShardBlock: 341.828 (3)
+  PetaboxLoader3.resolve: 409.601 (4)
+  PetaboxLoader3.datanode: 118.992 (4)
+  load_resource: 251.281
+-->

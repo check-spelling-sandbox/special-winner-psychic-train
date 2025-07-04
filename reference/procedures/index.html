@@ -1,0 +1,2314 @@
+
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+   <head><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app225.us.archive.org';v.server_ms=360;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://neo4j.com/docs/operations-manual/3.4/reference/procedures/","20190608093845","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1559986725");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A" />
+<!-- End Wayback Rewrite JS Include -->
+
+      <meta charset="utf-8"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <title>A.2.&nbsp;Built-in procedures - Appendix&nbsp;A.&nbsp;Reference</title>
+      <link rel="stylesheet" type="text/css" href="/web/20190608093845cs_/https://neo4j.com/docs/operations-manual/3.4/docbook.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190608093845cs_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190608093845cs_/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190608093845cs_/https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,300italic"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190608093845cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190608093845cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/theme/neo.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20190608093845cs_/https://neo4j.com/docs/operations-manual/3.4/css/extra.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20190608093845cs_/https://neo4j.com/docs/operations-manual/3.4/css/chunked-base.css"></link><script src="//web.archive.org/web/20190608093845js_/https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/addon/runmode/runmode.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/javascript/javascript.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/shell/shell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/powershell/powershell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/python/python.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/xml/xml.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/clike/clike.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/cypher/cypher.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/properties/properties.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/groovy/groovy.min.js" type="text/javascript"></script><script src="/web/20190608093845js_/https://neo4j.com/docs/operations-manual/3.4/javascript/colorize.js" type="text/javascript"></script><script src="/web/20190608093845js_/https://neo4j.com/docs/operations-manual/3.4/javascript/tabs-for-chunked.js" type="text/javascript"></script><script src="/web/20190608093845js_/https://neo4j.com/docs/operations-manual/3.4/javascript/mp-nav.js" type="text/javascript"></script><script src="/web/20190608093845js_/https://neo4j.com/docs/operations-manual/3.4/javascript/versionswitcher.js" type="text/javascript"></script><script src="/web/20190608093845js_/https://neo4j.com/docs/operations-manual/3.4/javascript/version.js" type="text/javascript"></script><script src="//web.archive.org/web/20190608093845js_/https://s3-eu-west-1.amazonaws.com/alpha.neohq.net/docs/new-manual/assets/search.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></meta>
+      <meta name="description" content="This section contains a reference of Neo4j built-in procedures."></meta>
+      <link rel="prev" href="/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/" title="A.1. Configuration settings"></link>
+      <link rel="next" href="/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/" title="A.3. User management for Community Edition"></link>
+      <link rel="shortcut icon" href="https://web.archive.org/web/20190608093845im_/https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico"></link><script>
+        $(document).ready(function() {
+          CodeMirror.colorize();
+          tabTheSource($('body'));
+          var $header = $('header').first();
+          $header.prepend(
+            $('<a href="../../" id="logo"><img src="https://web.archive.org/web/20190608093845/https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png" alt="Neo4j Logo"></img></a>')
+          );
+          var $sidebar = $('<div id="sidebar-wrapper"></div>');
+          $.get('toc.html', function (d){
+            $(d).appendTo($sidebar);
+            highlightToc();
+            highlightLibraryHeader();
+          });
+          $sidebar.insertAfter($('header').first());
+        });
+        </script></head>
+   <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;" toolbar-mode="auto">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20190608093845/https%3A//neo4j.com/docs/operations-manual/3.4/reference/procedures/"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://neo4j.com/docs/operations-manual/3.4/reference/procedures/" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20190608093845" /><input type="submit" value="Go" />
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;">
+                    <a class="t" href="/web/20190608093845*/https://neo4j.com/docs/operations-manual/3.4/reference/procedures/" title="See a list of every capture for this URL">1 capture</a>
+          <div class="r" title="Timespan for captures of this URL">08 Jun 2019</div>
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap">May</td>
+            <td class="c" id="displayMonthEl" title="You are here: 09:38:45 Jun 08, 2019">JUN</td>
+            <td class="f" nowrap="nowrap">Jul</td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" /></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 09:38:45 Jun 08, 2019">08</td>
+            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0" /></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2018</td>
+            <td class="c" id="displayYearEl" title="You are here: 09:38:45 Jun 08, 2019">2019</td>
+            <td class="f" nowrap="nowrap">2020</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive" >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="/web/20190608093845/http://web.archive.org/screenshot/https://neo4j.com/docs/operations-manual/3.4/reference/procedures/"
+           id="wm-screenshot"
+           title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/reference/procedures/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/reference/procedures/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/webwidecrawl);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/webwidecrawl" target="_new"><span class="wm-title">Internet Archive</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  The Internet Archive discovers and captures web pages through many different web crawls.
+
+At any given time several distinct crawls are running, some for months, and some every day or longer.
+
+View the web archive through the <a href="http://archive.org/web/web.php">Wayback Machine</a>.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/wide00017)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/wide00017" target="_new"><span class="wm-title">Wide Crawl Number 17: Started August 3rd, 2018</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  <div><span style="font-size: 16px; font-family: Arial;">Wide17 was seeded with the "Total Domains" list of 256,796,456 URLs provided by&nbsp;</span><span style="font-size: 16px; font-family: Arial;"><a href="https://domains-index.com">Domains Index</a>&nbsp;</span><span style="font-size: 16px; font-family: Arial;">on June 26th, and crawled with max-hops set to "3" and de-duplication set "on".</span><br style="font-size: 16px; font-family: Arial;"></div><div>&nbsp;&nbsp;</div>
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/reference/procedures/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/reference/procedures/","20190608093845",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A","https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+      <header>
+         <div class="searchbox">
+            <form id="search-form" class="search" name="search-form" role="search"><input id="search-form-input" name="q" title="search" type="search" lang="en" placeholder="Search Neo4j docs..." aria-label="Search Neo4j documentation" max-length="128" required="required"></input><input id="search-form-button" type="submit" value="Search"></input></form>
+         </div>
+         <ul class="documentation-library">
+            <li><a href="https://web.archive.org/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/">Operations Manual</a></li>
+            <li><a href="https://web.archive.org/web/20190608093845/https://neo4j.com/docs/developer-manual/3.4/">Developer Manual</a></li>
+            <li><a href="https://web.archive.org/web/20190608093845/https://neo4j.com/docs/ogm-manual/3.0/">OGM Manual</a></li>
+            <li><a href="https://web.archive.org/web/20190608093845/https://neo4j.com/docs/graph-algorithms/3.4/">Graph Algorithms</a></li>
+            <li><a href="https://web.archive.org/web/20190608093845/https://neo4j.com/docs/java-reference/3.4/">Java Reference</a></li>
+         </ul>
+         <nav id="header-nav"><span class="nav-previous"><a accesskey="p" href="/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/"><span class="fa fa-long-arrow-left" aria-hidden="true"></span>Configuration settings</a></span><span class="nav-current">
+               <p class="nav-title hidden">A.2.&nbsp;Built-in procedures</p></span><span class="nav-next"><a accesskey="n" href="/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/">User management for Community Edition<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a></span></nav>
+      </header>
+      <div id="search-results" class="hidden"></div>
+      <section class="section" id="ref-procedures">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a class="anchor" href="#ref-procedures"></a>A.2.&nbsp;Built-in procedures
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <div class="abstract">
+            <p>This section contains a reference of Neo4j built-in procedures.</p>
+         </div>
+         <section class="section" id="_procedures_editions_and_modes">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#_procedures_editions_and_modes"></a>A.2.1.&nbsp;Procedures, editions and modes
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>The procedures available depends on the type of installation.
+               Enterprise Edition provides a fuller set of procedures than Community Edition.
+               Cluster members have procedures that are not available in standalone mode.
+            </p>
+            <p>The cluster-specific procedures are not included in this reference, instead see <a class="xref" href="/web/20190608093845/https://neo4j.com/docs/operations-manual/3.4/monitoring/causal-cluster/procedures/" title="9.4.1. Procedures for monitoring a Causal Cluster">Section&nbsp;9.4.1, &#8220;Procedures for monitoring a Causal Cluster&#8221;</a>.
+               To check which procedures are available in your Neo4j instance, use the <code class="literal">dbms.procedures()</code> procedure.
+            </p>
+            <div class="example" id="d0e35450">
+               <div class="example-title">Example&nbsp;A.1.&nbsp;List available procedures</div>
+               <div class="example-contents">
+                  <p>To list the procedures available on your particular installation, run the following command in Neo4j Browser or in Cypher
+                     Shell:
+                  </p><pre class="programlisting highlight"><code data-lang="cypher">CALL dbms.procedures()</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="ref-procedure-reference">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#ref-procedure-reference"></a>A.2.2.&nbsp;Procedure reference
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>The procedure reference section contains the following:</p>
+            <div class="itemizedlist">
+               <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem"><a class="link" href="#ref-procedure-reference-enterprise-edition" title="A.2.3. Enterprise Edition procedures">Procedures available in standalone Neo4j Enterprise Edition</a></li>
+                  <li class="listitem"><a class="link" href="#ref-procedure-reference-community-edition" title="A.2.4. Community Edition procedures">Procedures available in Neo4j Community Edition</a></li>
+               </ul>
+            </div>
+         </section>
+         <section class="section" id="ref-procedure-reference-enterprise-edition">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#ref-procedure-reference-enterprise-edition"></a>A.2.3.&nbsp;Enterprise Edition procedures
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <div class="table" id="enterprise-edition-procedure-reference">
+               <table class="table enterprise-edition" summary="Enterprise Edition procedures" border="1">
+                  <caption class="table-title">Table&nbsp;A.300.&nbsp;Enterprise Edition procedures</caption>
+                  <colgroup>
+                     <col class="col_1"></col>
+                     <col class="col_2"></col>
+                     <col class="col_3"></col>
+                     <col class="col_4"></col>
+                     <col class="col_5"></col>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th style="text-align: left; vertical-align: top; ">Name</th>
+                        <th style="text-align: left; vertical-align: top; ">Description</th>
+                        <th style="text-align: left; vertical-align: top; ">Signature</th>
+                        <th style="text-align: left; vertical-align: top; ">Mode</th>
+                        <th style="text-align: left; vertical-align: top; ">Roles</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.awaitIndex()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Wait for an index to come online (for example: CALL db.awaitIndex(":Person(name)")).</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.awaitIndex(index :: STRING?, timeOutSeconds = 300 :: INTEGER?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.awaitIndexes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Wait for all indexes to come online (for example: CALL db.awaitIndexes("500")).</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.awaitIndexes(timeOutSeconds = 300 :: INTEGER?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.constraints()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all constraints in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.constraints() :: (description :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createIndex()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a schema index with specified index provider (for example: CALL db.createIndex(":Person(name)", "lucene+native-2.0"))
+                              - YIELD index, providerName, status
+                           </p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createIndex(index :: STRING?, providerName :: STRING?) :: (index :: STRING?, providerName :: STRING?, status :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">SCHEMA</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createLabel()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a label</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createLabel(newLabel :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createNodeKey()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a node key constraint with index backed by specified index provider (for example: CALL db.createNodeKey(":Person(name)",
+                              "lucene+native-2.0")) - YIELD index, providerName, status
+                           </p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createNodeKey(index :: STRING?, providerName :: STRING?) :: (index :: STRING?, providerName :: STRING?, status :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">SCHEMA</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createProperty()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a Property</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createProperty(newProperty :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createRelationshipType()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a RelationshipType</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createRelationshipType(newRelationshipType :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createUniquePropertyConstraint()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a unique property constraint with index backed by specified index provider (for example: CALL db.createUniquePropertyConstraint(":Person(name)",
+                              "lucene+native-2.0")) - YIELD index, providerName, status
+                           </p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createUniquePropertyConstraint(index :: STRING?, providerName :: STRING?) :: (index :: STRING?, providerName :: STRING?,
+                                 status :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">SCHEMA</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.addNode()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Add a node to an explicit index based on a specified key and value</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.addNode(indexName :: STRING?, node :: NODE?, key :: STRING?, value :: ANY?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.addRelationship()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Add a relationship to an explicit index based on a specified key and value</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.addRelationship(indexName :: STRING?, relationship :: RELATIONSHIP?, key :: STRING?, value :: ANY?) :: (success
+                                 :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.searchNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search nodes in explicit automatic index. Replaces <code class="literal">START n=node:node_auto_index('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.searchNodes(query :: ANY?) :: (node :: NODE?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.searchRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit automatic index. Replaces <code class="literal">START r=relationship:relationship_auto_index('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.searchRelationships(query :: ANY?) :: (relationship :: RELATIONSHIP?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.seekNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get node from explicit automatic index. Replaces <code class="literal">START n=node:node_auto_index(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.seekNodes(key :: STRING?, value :: ANY?) :: (node :: NODE?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.seekRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get relationship from explicit automatic index. Replaces <code class="literal">START r=relationship:relationship_auto_index(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.seekRelationships(key :: STRING?, value :: ANY?) :: (relationship :: RELATIONSHIP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.drop()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Remove an explicit index - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.drop(indexName :: STRING?) :: (type :: STRING?, name :: STRING?, config :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.existsForNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Check if a node explicit index exists</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.existsForNodes(indexName :: STRING?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.existsForRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Check if a relationship explicit index exists</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.existsForRelationships(indexName :: STRING?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DEFAULT</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.forNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get or create a node explicit index - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.forNodes(indexName :: STRING?, config = {} :: MAP?) :: (type :: STRING?, name :: STRING?, config :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.forRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get or create a relationship explicit index - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.forRelationships(indexName :: STRING?, config = {} :: MAP?) :: (type :: STRING?, name :: STRING?, config
+                                 :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.list()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all explicit indexes - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.list() :: (type :: STRING?, name :: STRING?, config :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.removeNode()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Remove a node from an explicit index with an optional key</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.removeNode(indexName :: STRING?, node :: NODE?, key =  &lt;[9895b15e-8693-4a21-a58b-4b7b87e09b8e]&gt;  :: STRING?)
+                                 :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.removeRelationship()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Remove a relationship from an explicit index with an optional key</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.removeRelationship(indexName :: STRING?, relationship :: RELATIONSHIP?, key =  &lt;[9895b15e-8693-4a21-a58b-4b7b87e09b8e]&gt;
+                                  :: STRING?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search nodes in explicit index. Replaces <code class="literal">START n=node:nodes('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchNodes(indexName :: STRING?, query :: ANY?) :: (node :: NODE?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index. Replaces <code class="literal">START r=relationship:relIndex('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationships(indexName :: STRING?, query :: ANY?) :: (relationship :: RELATIONSHIP?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationshipsBetween()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index, starting at the node 'in' and ending at 'out'.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationshipsBetween(indexName :: STRING?, in :: NODE?, out :: NODE?, query :: ANY?) :: (relationship
+                                 :: RELATIONSHIP?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationshipsIn()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index, starting at the node 'in'.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationshipsIn(indexName :: STRING?, in :: NODE?, query :: ANY?) :: (relationship :: RELATIONSHIP?,
+                                 weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationshipsOut()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index, ending at the node 'out'.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationshipsOut(indexName :: STRING?, out :: NODE?, query :: ANY?) :: (relationship :: RELATIONSHIP?,
+                                 weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.seekNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get node from explicit index. Replaces <code class="literal">START n=node:nodes(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.seekNodes(indexName :: STRING?, key :: STRING?, value :: ANY?) :: (node :: NODE?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.seekRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get relationship from explicit index. Replaces <code class="literal">START r=relationship:relIndex(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.seekRelationships(indexName :: STRING?, key :: STRING?, value :: ANY?) :: (relationship :: RELATIONSHIP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.indexes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all indexes in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.indexes() :: (description :: STRING?, label :: STRING?, properties :: LIST? OF STRING?, state :: STRING?, type :: STRING?,
+                                 provider :: MAP?, failureMessage :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.labels()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all labels in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.labels() :: (label :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.propertyKeys()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all property keys in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.propertyKeys() :: (propertyKey :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.relationshipTypes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all relationship types in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.relationshipTypes() :: (relationshipType :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.resampleIndex()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Schedule resampling of an index (for example: CALL db.resampleIndex(":Person(name)")).</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.resampleIndex(index :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.resampleOutdatedIndexes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Schedule resampling of all outdated indexes.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.resampleOutdatedIndexes() :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.schema()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the schema of the data.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.schema() :: (nodes :: LIST? OF NODE?, relationships :: LIST? OF RELATIONSHIP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.schema.nodeTypeProperties()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the derived property schema of the nodes in tabular form.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.schema.nodeTypeProperties() :: (nodeType :: STRING?, nodeLabels :: LIST? OF STRING?, propertyName :: STRING?, propertyTypes
+                                 :: LIST? OF STRING?, mandatory :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.schema.relTypeProperties()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the derived property schema of the relationships in tabular form.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.schema.relTypeProperties() :: (relType :: STRING?, propertyName :: STRING?, propertyTypes :: LIST? OF STRING?, mandatory
+                                 :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.changePassword()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Change the current user&#8217;s password. Deprecated by dbms.security.changePassword.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.changePassword(password :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.clearQueryCaches()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Clears all query caches.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.clearQueryCaches() :: (value :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.components()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List DBMS components and their versions.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.components() :: (name :: STRING?, versions :: LIST? OF STRING?, edition :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.functions()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all user functions in the DBMS.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.functions() :: (name :: STRING?, signature :: STRING?, description :: STRING?, roles :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.getTXMetaData()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Provides attached transaction metadata.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.getTXMetaData() :: (metadata :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.killQueries()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Kill all transactions executing a query with any of the given query ids.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.killQueries(ids :: LIST? OF STRING?) :: (queryId :: STRING?, username :: STRING?, message :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.killQuery()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Kill all transactions executing the query with the given query id.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.killQuery(id :: STRING?) :: (queryId :: STRING?, username :: STRING?, message :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.listActiveLocks()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List the active lock requests granted for the transaction executing the query with the given query id.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.listActiveLocks(queryId :: STRING?) :: (mode :: STRING?, resourceType :: STRING?, resourceId :: INTEGER?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.listConfig()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List the currently active config of Neo4j.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.listConfig(searchString =  :: STRING?) :: (name :: STRING?, description :: STRING?, value :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.listQueries()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all queries currently executing at this instance that are visible to the user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.listQueries() :: (queryId :: STRING?, username :: STRING?, metaData :: MAP?, query :: STRING?, parameters :: MAP?, planner
+                                 :: STRING?, runtime :: STRING?, indexes :: LIST? OF MAP?, startTime :: STRING?, elapsedTime :: STRING?, connectionDetails
+                                 :: STRING?, protocol :: STRING?, clientAddress :: STRING?, requestUri :: STRING?, status :: STRING?, resourceInformation ::
+                                 MAP?, activeLockCount :: INTEGER?, elapsedTimeMillis :: INTEGER?, cpuTimeMillis :: INTEGER?, waitTimeMillis :: INTEGER?, idleTimeMillis
+                                 :: INTEGER?, allocatedBytes :: INTEGER?, pageHits :: INTEGER?, pageFaults :: INTEGER?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.listTransactions()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all transactions currently executing at this instance that are visible to the user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.listTransactions() :: (transactionId :: STRING?, username :: STRING?, metaData :: MAP?, startTime :: STRING?, protocol
+                                 :: STRING?, clientAddress :: STRING?, requestUri :: STRING?, currentQueryId :: STRING?, currentQuery :: STRING?, activeLockCount
+                                 :: INTEGER?, status :: STRING?, resourceInformation :: MAP?, elapsedTimeMillis :: INTEGER?, cpuTimeMillis :: INTEGER?, waitTimeMillis
+                                 :: INTEGER?, idleTimeMillis :: INTEGER?, allocatedBytes :: INTEGER?, allocatedDirectBytes :: INTEGER?, pageHits :: INTEGER?,
+                                 pageFaults :: INTEGER?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.procedures()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all procedures in the DBMS.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.procedures() :: (name :: STRING?, signature :: STRING?, description :: STRING?, roles :: LIST? OF STRING?, mode :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.queryJmx()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Query JMX management data by domain and name. For instance, "org.neo4j:*"</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.queryJmx(query :: STRING?) :: (name :: STRING?, description :: STRING?, attributes :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.activateUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Activate a suspended user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.activateUser(username :: STRING?, requirePasswordChange = true :: BOOLEAN?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.addRoleToUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Assign a role to the user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.addRoleToUser(roleName :: STRING?, username :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.changePassword()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Change the current user&#8217;s password.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.changePassword(password :: STRING?, requirePasswordChange = false :: BOOLEAN?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.changeUserPassword()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Change the given user&#8217;s password.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.changeUserPassword(username :: STRING?, newPassword :: STRING?, requirePasswordChange = true :: BOOLEAN?) ::
+                                 VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.clearAuthCache()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Clears authentication and authorization cache.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.clearAuthCache() :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.createRole()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a new role.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.createRole(roleName :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.createUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a new user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.createUser(username :: STRING?, password :: STRING?, requirePasswordChange = true :: BOOLEAN?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.deleteRole()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Delete the specified role. Any role assignments will be removed.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.deleteRole(roleName :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.deleteUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Delete the specified user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.deleteUser(username :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.listRoles()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all available roles.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.listRoles() :: (role :: STRING?, users :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.listRolesForUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all roles assigned to the specified user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.listRolesForUser(username :: STRING?) :: (value :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.listUsers()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all native users.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.listUsers() :: (username :: STRING?, roles :: LIST? OF STRING?, flags :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.listUsersForRole()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all users currently assigned the specified role.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.listUsersForRole(roleName :: STRING?) :: (value :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.removeRoleFromUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Unassign a role from the user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.removeRoleFromUser(roleName :: STRING?, username :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.showCurrentUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the current user. Deprecated by dbms.showCurrentUser.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.showCurrentUser() :: (username :: STRING?, roles :: LIST? OF STRING?, flags :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.suspendUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Suspend the specified user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.suspendUser(username :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.setConfigValue()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Updates a given setting value. Passing an empty value will result in removing the configured value and falling back to the
+                              default value. Changes will not persist and will be lost if the server is restarted.
+                           </p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.setConfigValue(setting :: STRING?, value :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.setTXMetaData()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Attaches a map of data to the transaction. The data will be printed when listing queries, and inserted into the query log.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.setTXMetaData(data :: MAP?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.showCurrentUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the current user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.showCurrentUser() :: (username :: STRING?, roles :: LIST? OF STRING?, flags :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>reader, editor, publisher, architect, admin</p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </section>
+         <section class="section" id="ref-procedure-reference-community-edition">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#ref-procedure-reference-community-edition"></a>A.2.4.&nbsp;Community Edition procedures
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <div class="table" id="community-edition-procedure-reference">
+               <table class="table" summary="Community Edition procedures" border="1">
+                  <caption class="table-title">Table&nbsp;A.301.&nbsp;Community Edition procedures</caption>
+                  <colgroup>
+                     <col class="col_1"></col>
+                     <col class="col_2"></col>
+                     <col class="col_3"></col>
+                     <col class="col_4"></col>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th style="text-align: left; vertical-align: top; ">Name</th>
+                        <th style="text-align: left; vertical-align: top; ">Description</th>
+                        <th style="text-align: left; vertical-align: top; ">Signature</th>
+                        <th style="text-align: left; vertical-align: top; ">Mode</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.awaitIndex()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Wait for an index to come online (for example: CALL db.awaitIndex(":Person(name)")).</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.awaitIndex(index :: STRING?, timeOutSeconds = 300 :: INTEGER?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.awaitIndexes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Wait for all indexes to come online (for example: CALL db.awaitIndexes("500")).</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.awaitIndexes(timeOutSeconds = 300 :: INTEGER?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.constraints()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all constraints in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.constraints() :: (description :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createIndex()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a schema index with specified index provider (for example: CALL db.createIndex(":Person(name)", "lucene+native-2.0"))
+                              - YIELD index, providerName, status
+                           </p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createIndex(index :: STRING?, providerName :: STRING?) :: (index :: STRING?, providerName :: STRING?, status :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">SCHEMA</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createLabel()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a label</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createLabel(newLabel :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createProperty()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a Property</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createProperty(newProperty :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createRelationshipType()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a RelationshipType</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createRelationshipType(newRelationshipType :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.createUniquePropertyConstraint()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a unique property constraint with index backed by specified index provider (for example: CALL db.createUniquePropertyConstraint(":Person(name)",
+                              "lucene+native-2.0")) - YIELD index, providerName, status
+                           </p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.createUniquePropertyConstraint(index :: STRING?, providerName :: STRING?) :: (index :: STRING?, providerName :: STRING?,
+                                 status :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">SCHEMA</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.addNode()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Add a node to an explicit index based on a specified key and value</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.addNode(indexName :: STRING?, node :: NODE?, key :: STRING?, value :: ANY?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.addRelationship()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Add a relationship to an explicit index based on a specified key and value</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.addRelationship(indexName :: STRING?, relationship :: RELATIONSHIP?, key :: STRING?, value :: ANY?) :: (success
+                                 :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.searchNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search nodes in explicit automatic index. Replaces <code class="literal">START n=node:node_auto_index('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.searchNodes(query :: ANY?) :: (node :: NODE?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.searchRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit automatic index. Replaces <code class="literal">START r=relationship:relationship_auto_index('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.searchRelationships(query :: ANY?) :: (relationship :: RELATIONSHIP?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.seekNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get node from explicit automatic index. Replaces <code class="literal">START n=node:node_auto_index(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.seekNodes(key :: STRING?, value :: ANY?) :: (node :: NODE?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.auto.seekRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get relationship from explicit automatic index. Replaces <code class="literal">START r=relationship:relationship_auto_index(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.auto.seekRelationships(key :: STRING?, value :: ANY?) :: (relationship :: RELATIONSHIP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.drop()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Remove an explicit index - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.drop(indexName :: STRING?) :: (type :: STRING?, name :: STRING?, config :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.existsForNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Check if a node explicit index exists</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.existsForNodes(indexName :: STRING?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.existsForRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Check if a relationship explicit index exists</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.existsForRelationships(indexName :: STRING?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DEFAULT</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.forNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get or create a node explicit index - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.forNodes(indexName :: STRING?, config = {} :: MAP?) :: (type :: STRING?, name :: STRING?, config :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.forRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get or create a relationship explicit index - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.forRelationships(indexName :: STRING?, config = {} :: MAP?) :: (type :: STRING?, name :: STRING?, config
+                                 :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.list()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all explicit indexes - YIELD type,name,config</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.list() :: (type :: STRING?, name :: STRING?, config :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.removeNode()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Remove a node from an explicit index with an optional key</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.removeNode(indexName :: STRING?, node :: NODE?, key =  &lt;[9895b15e-8693-4a21-a58b-4b7b87e09b8e]&gt;  :: STRING?)
+                                 :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.removeRelationship()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Remove a relationship from an explicit index with an optional key</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.removeRelationship(indexName :: STRING?, relationship :: RELATIONSHIP?, key =  &lt;[9895b15e-8693-4a21-a58b-4b7b87e09b8e]&gt;
+                                  :: STRING?) :: (success :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">WRITE</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search nodes in explicit index. Replaces <code class="literal">START n=node:nodes('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchNodes(indexName :: STRING?, query :: ANY?) :: (node :: NODE?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index. Replaces <code class="literal">START r=relationship:relIndex('key:foo*')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationships(indexName :: STRING?, query :: ANY?) :: (relationship :: RELATIONSHIP?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationshipsBetween()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index, starting at the node 'in' and ending at 'out'.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationshipsBetween(indexName :: STRING?, in :: NODE?, out :: NODE?, query :: ANY?) :: (relationship
+                                 :: RELATIONSHIP?, weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationshipsIn()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index, starting at the node 'in'.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationshipsIn(indexName :: STRING?, in :: NODE?, query :: ANY?) :: (relationship :: RELATIONSHIP?,
+                                 weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.searchRelationshipsOut()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Search relationship in explicit index, ending at the node 'out'.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.searchRelationshipsOut(indexName :: STRING?, out :: NODE?, query :: ANY?) :: (relationship :: RELATIONSHIP?,
+                                 weight :: FLOAT?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.seekNodes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get node from explicit index. Replaces <code class="literal">START n=node:nodes(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.seekNodes(indexName :: STRING?, key :: STRING?, value :: ANY?) :: (node :: NODE?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.index.explicit.seekRelationships()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Get relationship from explicit index. Replaces <code class="literal">START r=relationship:relIndex(key = 'A')</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.index.explicit.seekRelationships(indexName :: STRING?, key :: STRING?, value :: ANY?) :: (relationship :: RELATIONSHIP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.indexes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all indexes in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.indexes() :: (description :: STRING?, label :: STRING?, properties :: LIST? OF STRING?, state :: STRING?, type :: STRING?,
+                                 provider :: MAP?, failureMessage :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.labels()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all labels in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.labels() :: (label :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.propertyKeys()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all property keys in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.propertyKeys() :: (propertyKey :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.relationshipTypes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all relationship types in the database.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.relationshipTypes() :: (relationshipType :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.resampleIndex()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Schedule resampling of an index (for example: CALL db.resampleIndex(":Person(name)")).</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.resampleIndex(index :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.resampleOutdatedIndexes()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Schedule resampling of all outdated indexes.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.resampleOutdatedIndexes() :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.schema()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the schema of the data.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.schema() :: (nodes :: LIST? OF NODE?, relationships :: LIST? OF RELATIONSHIP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.schema.nodeTypeProperties()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the derived property schema of the nodes in tabular form.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.schema.nodeTypeProperties() :: (nodeType :: STRING?, nodeLabels :: LIST? OF STRING?, propertyName :: STRING?, propertyTypes
+                                 :: LIST? OF STRING?, mandatory :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>db.schema.relTypeProperties()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the derived property schema of the relationships in tabular form.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">db.schema.relTypeProperties() :: (relType :: STRING?, propertyName :: STRING?, propertyTypes :: LIST? OF STRING?, mandatory
+                                 :: BOOLEAN?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.changePassword()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Change the current user&#8217;s password. Deprecated by dbms.security.changePassword.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.changePassword(password :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.clearQueryCaches()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Clears all query caches.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.clearQueryCaches() :: (value :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.components()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List DBMS components and their versions.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.components() :: (name :: STRING?, versions :: LIST? OF STRING?, edition :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.functions()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all user functions in the DBMS.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.functions() :: (name :: STRING?, signature :: STRING?, description :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.listConfig()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List the currently active config of Neo4j.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.listConfig(searchString =  :: STRING?) :: (name :: STRING?, description :: STRING?, value :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.procedures()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all procedures in the DBMS.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.procedures() :: (name :: STRING?, signature :: STRING?, description :: STRING?, mode :: STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.queryJmx()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Query JMX management data by domain and name. For instance, "org.neo4j:*"</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.queryJmx(query :: STRING?) :: (name :: STRING?, description :: STRING?, attributes :: MAP?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">READ</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.changePassword()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Change the current user&#8217;s password.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.changePassword(password :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.createUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Create a new user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.createUser(username :: STRING?, password :: STRING?, requirePasswordChange = true :: BOOLEAN?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.deleteUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Delete the specified user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.deleteUser(username :: STRING?) :: VOID</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.listUsers()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all native users.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.listUsers() :: (username :: STRING?, flags :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.security.showCurrentUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the current user. Deprecated by dbms.showCurrentUser.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.security.showCurrentUser() :: (username :: STRING?, flags :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>dbms.showCurrentUser()</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show the current user.</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">dbms.showCurrentUser() :: (username :: STRING?, flags :: LIST? OF STRING?)</code></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><code class="literal">DBMS</code></p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </section>
+      </section>
+      <footer><script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//web.archive.org/web/20190608093845/https://www.google-analytics.com/analytics.js','ga');
+          //Allow Linker
+          ga('create', 'UA-1192232-34','auto', {'allowLinker': true});
+          ga('send', 'pageview');
+          // Load the plugin.
+          ga('require', 'linker');
+          // Define which domains to autoLink.
+          ga('linker:autoLink', ['neo4j.org','neo4j.com','neotechnology.com','graphdatabases.com','graphconnect.com']);
+        </script><script type="text/javascript">
+          document.write(unescape("%3Cscript src='//web.archive.org/web/20190608093845/https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script>Munchkin.init('773-GON-065');</script></footer>
+   </body>
+</html><!--
+     FILE ARCHIVED ON 09:38:45 Jun 08, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:43:25 Jul 04, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.748
+  exclusion.robots: 0.042
+  exclusion.robots.policy: 0.027
+  esindex: 0.012
+  cdx.remote: 28.669
+  LoadShardBlock: 187.877 (3)
+  PetaboxLoader3.datanode: 124.269 (4)
+  PetaboxLoader3.resolve: 156.222 (2)
+  load_resource: 109.252
+-->

@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+   <head><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app212.us.archive.org';v.server_ms=432;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://neo4j.com/docs/operations-manual/3.4/clustering/settings/","20200128111103","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1580209863");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A" />
+<!-- End Wayback Rewrite JS Include -->
+
+      <meta charset="utf-8"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <title>4.9.&nbsp;Settings reference - Chapter&nbsp;4.&nbsp;Clustering</title>
+      <link rel="stylesheet" type="text/css" href="/web/20200128111103cs_/https://neo4j.com/docs/operations-manual/3.4/docbook.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111103cs_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111103cs_/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111103cs_/https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,300italic"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111103cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111103cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/theme/neo.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20200128111103cs_/https://neo4j.com/docs/operations-manual/3.4/css/extra.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20200128111103cs_/https://neo4j.com/docs/operations-manual/3.4/css/chunked-base.css"></link><script src="//web.archive.org/web/20200128111103js_/https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/addon/runmode/runmode.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/javascript/javascript.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/shell/shell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/powershell/powershell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/python/python.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/xml/xml.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/clike/clike.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/cypher/cypher.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/properties/properties.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/groovy/groovy.min.js" type="text/javascript"></script><script src="/web/20200128111103js_/https://neo4j.com/docs/operations-manual/3.4/javascript/colorize.js" type="text/javascript"></script><script src="/web/20200128111103js_/https://neo4j.com/docs/operations-manual/3.4/javascript/tabs-for-chunked.js" type="text/javascript"></script><script src="/web/20200128111103js_/https://neo4j.com/docs/operations-manual/3.4/javascript/mp-nav.js" type="text/javascript"></script><script src="/web/20200128111103js_/https://neo4j.com/docs/operations-manual/3.4/javascript/versionswitcher.js" type="text/javascript"></script><script src="/web/20200128111103js_/https://neo4j.com/docs/operations-manual/3.4/javascript/version.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111103js_/https://s3-eu-west-1.amazonaws.com/alpha.neohq.net/docs/new-manual/assets/search.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></meta>
+      <meta name="description" content="This section lists the important settings related to running a Neo4j Causal Cluster."></meta>
+      <link rel="prev" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/clustering/multi-clustering/config/" title="4.8.2. Configure a multi-cluster"></link>
+      <link rel="next" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/upgrade/" title="Chapter 5. Upgrade"></link>
+      <link rel="shortcut icon" href="https://web.archive.org/web/20200128111103im_/https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico"></link><script>
+        $(document).ready(function() {
+          CodeMirror.colorize();
+          tabTheSource($('body'));
+          var $header = $('header').first();
+          $header.prepend(
+            $('<a href="../../" id="logo"><img src="https://web.archive.org/web/20200128111103/https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png" alt="Neo4j Logo"></img></a>')
+          );
+          var $sidebar = $('<div id="sidebar-wrapper"></div>');
+          $.get('toc.html', function (d){
+            $(d).appendTo($sidebar);
+            highlightToc();
+            highlightLibraryHeader();
+          });
+          $sidebar.insertAfter($('header').first());
+        });
+        </script></head>
+   <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;" toolbar-mode="auto">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20200128111103/https%3A//neo4j.com/docs/operations-manual/3.4/clustering/settings/"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://neo4j.com/docs/operations-manual/3.4/clustering/settings/" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20200128111103" /><input type="submit" value="Go" />
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;">
+                    <a class="t" href="/web/20200128111103*/https://neo4j.com/docs/operations-manual/3.4/clustering/settings/" title="See a list of every capture for this URL">1 capture</a>
+          <div class="r" title="Timespan for captures of this URL">28 Jan 2020</div>
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap">Dec</td>
+            <td class="c" id="displayMonthEl" title="You are here: 11:11:03 Jan 28, 2020">JAN</td>
+            <td class="f" nowrap="nowrap">Feb</td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" /></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 11:11:03 Jan 28, 2020">28</td>
+            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0" /></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2019</td>
+            <td class="c" id="displayYearEl" title="You are here: 11:11:03 Jan 28, 2020">2020</td>
+            <td class="f" nowrap="nowrap">2021</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive" >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="/web/20200128111103/http://web.archive.org/screenshot/https://neo4j.com/docs/operations-manual/3.4/clustering/settings/"
+           id="wm-screenshot"
+           title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/clustering/settings/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/clustering/settings/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/wikipedia-eventstream)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/wikipedia-eventstream" target="_new"><span class="wm-title">Wikipedia Eventstream</span></a></div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/clustering/settings/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/clustering/settings/","20200128111103",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A","https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+      <header>
+         <div class="searchbox">
+            <form id="search-form" class="search" name="search-form" role="search"><input id="search-form-input" name="q" title="search" type="search" lang="en" placeholder="Search Neo4j docs..." aria-label="Search Neo4j documentation" max-length="128" required="required"></input><input id="search-form-button" type="submit" value="Search"></input></form>
+         </div>
+         <ul class="documentation-library">
+            <li><a href="https://web.archive.org/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/">Operations Manual</a></li>
+            <li><a href="https://web.archive.org/web/20200128111103/https://neo4j.com/docs/developer-manual/3.4/">Developer Manual</a></li>
+            <li><a href="https://web.archive.org/web/20200128111103/https://neo4j.com/docs/ogm-manual/3.0/">OGM Manual</a></li>
+            <li><a href="https://web.archive.org/web/20200128111103/https://neo4j.com/docs/graph-algorithms/3.4/">Graph Algorithms</a></li>
+            <li><a href="https://web.archive.org/web/20200128111103/https://neo4j.com/docs/java-reference/3.4/">Java Reference</a></li>
+         </ul>
+         <nav id="header-nav"><span class="nav-previous"><a accesskey="p" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/clustering/multi-clustering/config/"><span class="fa fa-long-arrow-left" aria-hidden="true"></span>Configure a multi-cluster</a></span><span class="nav-current">
+               <p class="nav-title hidden">4.9.&nbsp;Settings reference</p></span><span class="nav-next"><a accesskey="n" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/upgrade/">Upgrade<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a></span></nav>
+      </header>
+      <div id="search-results" class="hidden"></div>
+      <section class="section enterprise-edition" id="causal-clustering-settings">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a class="anchor" href="#causal-clustering-settings"></a>4.9.&nbsp;Settings reference
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <div class="abstract">
+            <p>This section lists the important settings related to running a Neo4j Causal Cluster.</p>
+         </div>
+         <p>This section includes:</p>
+         <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+               <li class="listitem"><a class="link" href="#causal-clustering-settings-common" title="4.9.1. Common settings">Common settings</a></li>
+               <li class="listitem"><a class="link" href="#causal-clustering-settings-multi-dc" title="4.9.2. Multi-data center settings">Multi-data center settings</a></li>
+            </ul>
+         </div>
+         <section class="section" id="causal-clustering-settings-common">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#causal-clustering-settings-common"></a>4.9.1.&nbsp;Common settings
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <div class="informaltable">
+               <div class="table" id="d0e8335">
+                  <table class="informaltable" border="1" width="100%">
+                     <colgroup>
+                        <col class="col_1"></col>
+                        <col class="col_2"></col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th style="text-align: left; vertical-align: top; ">Parameter</th>
+                           <th style="text-align: left; vertical-align: top; ">Explanation</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_dbms.mode" title="Table A.165. dbms.mode">dbms.mode</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This setting configures the operating mode of the database.
+                                 For Causal Clustering, there are two possible modes: <code class="literal">CORE</code> or <code class="literal">READ_REPLICA</code>.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">dbms.mode=READ_REPLICA</code> will define this server as a Read Replica.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.minimum_core_cluster_size_at_formation" title="Table A.39. causal_clustering.minimum_core_cluster_size_at_formation">causal_clustering.minimum_core_cluster_size_at_formation</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The expected cluster size at initial cluster formation.
+                                 The minimum number of instances to form a safe cluster is two, but to allow for minimal operational fault tolerance it defaults
+                                 to three such that the loss of one instance will leave the cluster operable.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.minimum_core_cluster_size_at_formation=3</code> will specify that the cluster is intended to start with three Core members (and will be safe to start when a cluster of two
+                                 out of three has formed).
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.minimum_core_cluster_size_at_runtime" title="Table A.40. causal_clustering.minimum_core_cluster_size_at_runtime">causal_clustering.minimum_core_cluster_size_at_runtime</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The minimum Core cluster size at runtime.
+                                 The minimum number of instances to maintain a fault-tolerant cluster is two, but for sane operational characteristics three
+                                 is the default.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.minimum_core_cluster_size_at_runtime=3</code> will specify that the cluster should not drop below three Core members in the voting set (allowing a majority of just two
+                                 instances to continue to run the cluster).
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.discovery_type" title="Table A.19. causal_clustering.discovery_type">causal_clustering.discovery_type</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Causal Clustering instances communicate over the network to ensure consistency of the database.
+                                 Each member of the cluster must be given bootstrap information about the other members that are expected to be in the cluster.
+                                 This setting specifies the strategy that the instance will use to determine the addresses for other instances in the cluster
+                                 to contact for bootstrapping.
+                                 The value of this setting determines how <code class="literal">causal_clustering.initial_discovery_members</code> is interpreted.
+                                 Options are <code class="literal">LIST</code>, <code class="literal">DNS</code> and <code class="literal">SRV</code>.
+                              </p>
+                              
+                              <div class="variablelist compact">
+                                 <dl class="variablelist compact">
+                                    <dt><span class="term"><code class="literal">LIST</code></span></dt>
+                                    <dd>Treat <code class="literal">causal_clustering.initial_discovery_members</code> as a list of addresses of Core Servers to contact for discovery.
+                                    </dd>
+                                    <dt><span class="term"><code class="literal">DNS</code></span></dt>
+                                    <dd>Treat <code class="literal">causal_clustering.initial_discovery_members</code> as a domain name to resolve via DNS.
+                                       Expect DNS resolution to provide A records with hostnames or IP addresses of Cores to contact for discovery, on the port specified
+                                       by <code class="literal">causal_clustering.initial_discovery_members</code>.
+                                    </dd>
+                                    <dt><span class="term"><code class="literal">SRV</code></span></dt>
+                                    <dd>Treat <code class="literal">causal_clustering.initial_discovery_members</code> as a domain name to resolve via DNS.
+                                       Expect DNS resolution to provide SRV records with hostnames or IP addresses, and ports, of Cores to contact for discovery.
+                                    </dd>
+                                 </dl>
+                              </div>
+                              
+                              <p>Detailed information about discovery and discovery configuration options is given in the <a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/clustering/setup-new-cluster/#causal-clustering-discovery" title="4.3.7. Initial discovery of cluster members">Initial discovery of cluster members</a> section.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.discovery_type=DNS</code> combined with <code class="literal">causal_clustering.initial_discovery_members=neo20.example.com:5000</code> will fetch all DNS A records for <span class="emphasis"><em>neo20.example.com</em></span> and attempt to reach Neo4j instances listening on port 5000 for each A record&#8217;s IP address.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.initial_discovery_members" title="Table A.28. causal_clustering.initial_discovery_members">causal_clustering.initial_discovery_members</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Causal Clustering instances communicate over the network to ensure consistency of the database.
+                                 An instance will contact these initial discovery members to both register itself as a member of the cluster and to ask them
+                                 for contact information (advertised addresses) for other members of the cluster.
+                                 Specifying an instance&#8217;s own address is permitted.
+                                 It is not necessary to specify an address for every other cluster member.
+                                 However, if the initial discovery members configured for the cluster form two or more disjoint sets, then the cluster will
+                                 not form correctly.
+                                 Do not use any whitespace in this configuration option.
+                              </p>
+                              
+                              <p>Detailed information about discovery and discovery configuration options is given in the <a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/clustering/setup-new-cluster/#causal-clustering-discovery" title="4.3.7. Initial discovery of cluster members">Initial discovery of cluster members</a> section.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.discovery_type=LIST</code> combined with <code class="literal">causal_clustering.initial_discovery_members=neo22:5001,neo21:5001,neo20:5001</code> will attempt to reach Neo4j instances listening on <span class="emphasis"><em>neo22</em></span> on port 5001 and <span class="emphasis"><em>neo21</em></span> on port 5001 and <span class="emphasis"><em>neo20</em></span> also on port 5001.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.raft_advertised_address" title="Table A.52. causal_clustering.raft_advertised_address">causal_clustering.raft_advertised_address</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The address/port setting that specifies where the Neo4j instance advertises to other members of the cluster that it will listen
+                                 for Raft messages within the Core cluster.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.raft_advertised_address=192.168.33.20:7000</code> will listen for for cluster communication in the network interface bound to 192.168.33.20 on port 7000.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.transaction_advertised_address" title="Table A.80. causal_clustering.transaction_advertised_address">causal_clustering.transaction_advertised_address</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The address/port setting that specifies where the instance advertises where it will listen for requests for transactions in
+                                 the transaction-shipping catchup protocol.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.transaction_advertised_address=192.168.33.20:6001</code> will listen for transactions from cluster members on the network interface bound to 192.168.33.20 on port 6001.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.discovery_listen_address" title="Table A.18. causal_clustering.discovery_listen_address">causal_clustering.discovery_listen_address</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The address/port setting for use by the discovery protocol.
+                                 This is the setting which will be included in the setting <code class="literal">causal_clustering.initial_discovery_members</code> which are set in the configuration of the other members of the cluster.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.discovery_listen_address=0.0.0.0:5001</code> will listen for cluster membership communication on any network interface at port 5001.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.raft_listen_address" title="Table A.53. causal_clustering.raft_listen_address">causal_clustering.raft_listen_address</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The address/port setting that specifies which network interface and port the Neo4j instance will bind to for cluster communication.
+                                 This setting must be set in coordination with the address this instance advertises it will listen at in the setting <code class="literal">causal_clustering.raft_advertised_address</code>.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.raft_listen_address=0.0.0.0:7000</code> will listen for cluster communication on any network interface at port 7000.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.transaction_listen_address" title="Table A.81. causal_clustering.transaction_listen_address">causal_clustering.transaction_listen_address</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The address/port setting that specifies which network interface and port the Neo4j instance will bind to for cluster communication.
+                                 This setting must be set in coordination with the address this instance advertises it will listen at in the setting <code class="literal">causal_clustering.transaction_advertised_address</code>.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.transaction_listen_address=0.0.0.0:6001</code> will listen for cluster communication on any network interface at port 7000.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.refuse_to_be_leader" title="Table A.63. causal_clustering.refuse_to_be_leader">causal_clustering.refuse_to_be_leader</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Prevents the current instance from volunteering to become Raft leader if set to <code class="literal">true</code>.
+                                 Defaults to <code class="literal">false</code>, and should only be used in exceptional circumstances when advised by Neo4j Professional Services.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.refuse_to_be_leader=false</code></p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.cluster_allow_reads_on_followers" title="Table A.11. causal_clustering.cluster_allow_reads_on_followers">causal_clustering.cluster_allow_reads_on_followers</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Defaults to <code class="literal">true</code> so that followers are available for read-only queries in a typical heterogeneous setup.
+                                 Note: if there are no Read Replicas in the cluster, followers are made available for read, regardless the value of this setting.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.cluster_allow_reads_on_followers=true</code></p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.store_copy_max_retry_time_per_request" title="Table A.78. causal_clustering.store_copy_max_retry_time_per_request">causal_clustering.store_copy_max_retry_time_per_request</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Condition for when store copy should eventually fail. A request is allowed to retry for any amount of attempts as long as
+                                 the configured time has not been met. For very large stores or other reason that might make transferring of files slow this
+                                 could be increased.
+                              </p>
+                              
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.store_copy_max_retry_time_per_request=60min</code></p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </section>
+         <section class="section" id="causal-clustering-settings-multi-dc">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#causal-clustering-settings-multi-dc"></a>4.9.2.&nbsp;Multi-data center settings
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <div class="informaltable">
+               <div class="table" id="d0e8671">
+                  <table class="informaltable" border="1" width="100%">
+                     <colgroup>
+                        <col class="col_1"></col>
+                        <col class="col_2"></col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th style="text-align: left; vertical-align: top; ">Parameter</th>
+                           <th style="text-align: left; vertical-align: top; ">Explanation</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.multi_dc_license" title="Table A.41. causal_clustering.multi_dc_license">causal_clustering.multi_dc_license</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Enables multi-data center features. Requires appropriate licensing.
+                                 
+                              </p>
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.multi_dc_license=true</code> will enable the multi-data center features.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.server_groups" title="Table A.74. causal_clustering.server_groups">causal_clustering.server_groups</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>A list of group names for the server used when configuring load balancing and replication policies.
+                                 
+                              </p>
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.server_groups=us,us-east</code> will add the current instance to the groups <code class="literal">us</code> and <code class="literal">us-east</code>.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.upstream_selection_strategy" title="Table A.83. causal_clustering.upstream_selection_strategy">causal_clustering.upstream_selection_strategy</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>An ordered list in descending preference of the strategy which Read Replicas use to choose upstream database server from which
+                                 to pull transactional updates.
+                                 
+                              </p>
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.upstream_selection_strategy=connect-randomly-within-server-group,typically-connect-to-random-read-replica</code> will configure the behavior so that the Read Replica will first try to connect to any other instance in the group(s) specified
+                                 in <code class="literal">causal_clustering.server_groups</code>.
+                                 Should we fail to find any live instances in those groups, then we will connect to a random Read Replica.
+                                 A value of <code class="literal">user-defined</code> will enable custom strategy definitions using the setting <code class="literal">causal_clustering.user_defined_upstream_strategy</code>.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.user_defined_upstream_strategy" title="Table A.84. causal_clustering.user_defined_upstream_strategy">causal_clustering.user_defined_upstream_strategy</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Defines the configuration of upstream dependencies.
+                                 Can only be used if <code class="literal">causal_clustering.upstream_selection_strategy</code> is set to <code class="literal">user-defined</code>.
+                                 
+                              </p>
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.user_defined_upstream_strategy=groups(north2); groups(north); halt()</code> will look for servers in the <code class="literal">north2</code>.
+                                 If none are available it will look in the <code class="literal">north</code> server group.
+                                 Finally, if we cannot resolve any servers in any of the previous groups, then rule chain will be stopped via <code class="literal">halt()</code>.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal"><a class="link" href="/web/20200128111103/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_causal_clustering.load_balancing.plugin" title="Table A.35. causal_clustering.load_balancing.plugin">causal_clustering.load_balancing.plugin</a></code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The load balancing plugin to use.
+                                 One pre-defined plugin named <code class="literal">server_policies</code> is available by default.
+                                 
+                              </p>
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.load_balancing.plugin=server_policies</code> will enable custom policy definitions.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">causal_clustering.load_balancing.config.server_policies.&lt;policy-name&gt;</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Defines a custom policy under the name <code class="literal">&lt;policy-name&gt;</code>.
+                                 Note that load balancing policies are cluster-global configurations and should be defined the exact same way on all core machines.
+                                 
+                              </p>
+                              <p><span class="strong"><strong>Example:</strong></span> <code class="literal">causal_clustering.load_balancing.config.server_policies.north1_only=groups(north1)&#8594;min(2); halt();</code> will define a load balancing policy named <code class="literal">north1_only</code>.
+                                 Queries are only sent to servers in the <code class="literal">north1</code> server group, provided there are two of them available.
+                                 If there are less than two servers in <code class="literal">north1</code> then the chain is halted.
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </section>
+      </section>
+      <footer><script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//web.archive.org/web/20200128111103/https://www.google-analytics.com/analytics.js','ga');
+          //Allow Linker
+          ga('create', 'UA-1192232-34','auto', {'allowLinker': true});
+          ga('send', 'pageview');
+          // Load the plugin.
+          ga('require', 'linker');
+          // Define which domains to autoLink.
+          ga('linker:autoLink', ['neo4j.org','neo4j.com','neotechnology.com','graphdatabases.com','graphconnect.com']);
+        </script><script type="text/javascript">
+          document.write(unescape("%3Cscript src='//web.archive.org/web/20200128111103/https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script>Munchkin.init('773-GON-065');</script></footer>
+   </body>
+</html><!--
+     FILE ARCHIVED ON 11:11:03 Jan 28, 2020 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:34:09 Jul 04, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.768
+  exclusion.robots: 0.049
+  exclusion.robots.policy: 0.027
+  esindex: 0.016
+  cdx.remote: 18.449
+  LoadShardBlock: 171.076 (3)
+  PetaboxLoader3.datanode: 131.842 (4)
+  PetaboxLoader3.resolve: 220.886 (2)
+  load_resource: 206.632
+-->

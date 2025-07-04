@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+   <head><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app28.us.archive.org';v.server_ms=516;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/","20230509034507","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1683603907");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A" />
+<!-- End Wayback Rewrite JS Include -->
+
+      <meta charset="utf-8"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <title>B.1.&nbsp;Set up a local Causal Cluster - Appendix&nbsp;B.&nbsp;Tutorials</title>
+      <link rel="stylesheet" type="text/css" href="/web/20230509034507cs_/https://neo4j.com/docs/operations-manual/3.4/docbook.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20230509034507cs_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20230509034507cs_/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20230509034507cs_/https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,300italic"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20230509034507cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20230509034507cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/theme/neo.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20230509034507cs_/https://neo4j.com/docs/operations-manual/3.4/css/extra.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20230509034507cs_/https://neo4j.com/docs/operations-manual/3.4/css/chunked-base.css"></link><script src="//web.archive.org/web/20230509034507js_/https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/addon/runmode/runmode.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/javascript/javascript.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/shell/shell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/powershell/powershell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/python/python.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/xml/xml.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/clike/clike.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/cypher/cypher.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/properties/properties.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/groovy/groovy.min.js" type="text/javascript"></script><script src="/web/20230509034507js_/https://neo4j.com/docs/operations-manual/3.4/javascript/colorize.js" type="text/javascript"></script><script src="/web/20230509034507js_/https://neo4j.com/docs/operations-manual/3.4/javascript/tabs-for-chunked.js" type="text/javascript"></script><script src="/web/20230509034507js_/https://neo4j.com/docs/operations-manual/3.4/javascript/mp-nav.js" type="text/javascript"></script><script src="/web/20230509034507js_/https://neo4j.com/docs/operations-manual/3.4/javascript/versionswitcher.js" type="text/javascript"></script><script src="/web/20230509034507js_/https://neo4j.com/docs/operations-manual/3.4/javascript/version.js" type="text/javascript"></script><script src="//web.archive.org/web/20230509034507js_/https://s3-eu-west-1.amazonaws.com/alpha.neohq.net/docs/new-manual/assets/search.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></meta>
+      <meta name="description" content="This tutorial walks through the basics of setting up a Neo4j Causal Cluster. The result is a local cluster of six instances: three Cores and three Read Replicas."></meta>
+      <link rel="prev" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/tutorial/" title="Appendix B. Tutorials"></link>
+      <link rel="next" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/tutorial/import-tool/" title="B.2. Use the Import tool"></link>
+      <link rel="shortcut icon" href="https://web.archive.org/web/20230509034507im_/https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico"></link><script>
+        $(document).ready(function() {
+          CodeMirror.colorize();
+          tabTheSource($('body'));
+          var $header = $('header').first();
+          $header.prepend(
+            $('<a href="../../" id="logo"><img src="https://web.archive.org/web/20230509034507/https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png" alt="Neo4j Logo"></img></a>')
+          );
+          var $sidebar = $('<div id="sidebar-wrapper"></div>');
+          $.get('toc.html', function (d){
+            $(d).appendTo($sidebar);
+            highlightToc();
+            highlightLibraryHeader();
+          });
+          $sidebar.insertAfter($('header').first());
+        });
+        </script></head>
+   <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;" toolbar-mode="auto">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20230509034507/https%3A//neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20230509034507" /><input type="submit" value="Go" />
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;">
+                    <a class="t" href="/web/20230509034507*/https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/" title="See a list of every capture for this URL">1 capture</a>
+          <div class="r" title="Timespan for captures of this URL">09 May 2023</div>
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap">Apr</td>
+            <td class="c" id="displayMonthEl" title="You are here: 03:45:07 May 09, 2023">MAY</td>
+            <td class="f" nowrap="nowrap">Jun</td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" /></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 03:45:07 May 09, 2023">09</td>
+            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0" /></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2022</td>
+            <td class="c" id="displayYearEl" title="You are here: 03:45:07 May 09, 2023">2023</td>
+            <td class="f" nowrap="nowrap">2024</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive" >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="/web/20230509034507/http://web.archive.org/screenshot/https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/"
+           id="wm-screenshot"
+           title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/save-page-now)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/save-page-now" target="_new"><span class="wm-title">Save Page Now</span></a></div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/tutorial/local-causal-cluster/","20230509034507",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A","https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+      <header>
+         <div class="searchbox">
+            <form id="search-form" class="search" name="search-form" role="search"><input id="search-form-input" name="q" title="search" type="search" lang="en" placeholder="Search Neo4j docs..." aria-label="Search Neo4j documentation" max-length="128" required="required"></input><input id="search-form-button" type="submit" value="Search"></input></form>
+         </div>
+         <ul class="documentation-library">
+            <li><a href="https://web.archive.org/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/">Operations Manual</a></li>
+            <li><a href="https://web.archive.org/web/20230509034507/https://neo4j.com/docs/developer-manual/3.4/">Developer Manual</a></li>
+            <li><a href="https://web.archive.org/web/20230509034507/https://neo4j.com/docs/ogm-manual/3.0/">OGM Manual</a></li>
+            <li><a href="https://web.archive.org/web/20230509034507/https://neo4j.com/docs/graph-algorithms/3.4/">Graph Algorithms</a></li>
+            <li><a href="https://web.archive.org/web/20230509034507/https://neo4j.com/docs/java-reference/3.4/">Java Reference</a></li>
+         </ul>
+         <nav id="header-nav"><span class="nav-previous"><a accesskey="p" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/tutorial/"><span class="fa fa-long-arrow-left" aria-hidden="true"></span>Tutorials</a></span><span class="nav-current">
+               <p class="nav-title hidden">B.1.&nbsp;Set up a local Causal Cluster</p></span><span class="nav-next"><a accesskey="n" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/tutorial/import-tool/">Use the Import tool<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a></span></nav>
+      </header>
+      <div id="search-results" class="hidden"></div>
+      <section class="section enterprise-edition" id="causal-clustering-local-cluster-tutorial">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a class="anchor" href="#causal-clustering-local-cluster-tutorial"></a>B.1.&nbsp;Set up a local Causal Cluster
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <div class="abstract">
+            <p>This tutorial walks through the basics of setting up a Neo4j Causal Cluster.
+               The result is a local cluster of six instances: three Cores and three Read Replicas.
+            </p>
+         </div>
+         <p>In this section we will learn how to deploy a Causal Cluster locally, on a single machine.
+            This is useful as a learning exercise and to get started quickly developing an application against a Neo4j Causal Cluster.
+            A cluster on a single machine has no fault tolerance and is not suitable for production use.
+         </p>
+         <p>We will begin by configuring and starting a cluster of three Core instances.
+            This is the minimal deployment for a fault-tolerant Causal Cluster (for a discussion on the number of servers required for
+            a Causal Cluster, see <a class="xref" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/clustering/introduction/#causal-clustering-core-servers" title="4.1.2.1. Core Servers">Section&nbsp;4.1.2.1, &#8220;Core Servers&#8221;</a>).
+            The Core instances are responsible for keeping the data safe.
+         </p>
+         <p>After the Core of the cluster is operational we will add three Read Replicas.
+            The Read Replicas are responsible for scaling the capacity of the cluster.
+         </p>
+         <p>The core of the Causal Cluster remains stable over time.
+            The roles within the core will change as needed but the core itself is long-lived and stable.
+            At the edge of the cluster, the Read Replicas are cheap and disposable.
+            They can be added as needed to increase the operational capacity of the cluster as a whole.
+         </p>
+         <section class="section" id="tutorial-local-cluster-download-configure">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#tutorial-local-cluster-download-configure"></a>B.1.1.&nbsp;Download and configure
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>Some of the configuration for the instances in the cluster will be identical.
+               A convenient way to go about the configuration is therefore:
+            </p>
+            <div class="orderedlist">
+               <ol class="orderedlist" type="1">
+                  <li class="listitem">Create a local working directory.</li>
+                  <li class="listitem">Download a copy of Neo4j Enterprise Edition from <a class="link" href="https://web.archive.org/web/20230509034507/https://neo4j.com/download/other-releases/#releases" target="_top">the Neo4j download site</a>.
+                  </li>
+                  <li class="listitem">Unpack Neo4j in the working directory.</li>
+                  <li class="listitem">Make a copy of the <span class="emphasis"><em>neo4j-enterprise-3.4.18</em></span> directory and name it <span class="emphasis"><em>core-01/</em></span> or similar.
+                     Keep the original directory to use when setting up the Read Replicas later.
+                     The <span class="emphasis"><em>core-01/</em></span> directory will contain the first Core instance.
+                  </li>
+                  <li class="listitem">Complete the configuration (see below) for the first Core instance.
+                     Then make two copies of the <span class="emphasis"><em>core-01/</em></span> directory and name them <span class="emphasis"><em>core-02/</em></span> and <span class="emphasis"><em>core-03/</em></span>.
+                  </li>
+                  <li class="listitem">Proceed with the configuration of the two copied instances.
+                     Those changes that are common to all three Core instances are now already in place for Cores number two and three.
+                  </li>
+               </ol>
+            </div>
+            <p>In this example we are running all instances in the cluster on a single machine.
+               Many of the default configuration settings work well out of the box in a production deployment, with multiple machines.
+               Some of these we have to change when deploying multiple instances on a single machine, so that instances do not try to use
+               the same network ports.
+               We call out the settings that are specific to this scenario as we go along.
+            </p>
+         </section>
+         <section class="section" id="tutorial-local-cluster-configuration">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#tutorial-local-cluster-configuration"></a>B.1.2.&nbsp;Configure the Core instances
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>All configuration that we will do takes place in the Neo4j configuration file, <span class="emphasis"><em>conf/neo4j.conf</em></span>.
+               If you used a different package than in the download instructions above, see <a class="xref" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/configuration/file-locations/" title="3.2. File locations">Section&nbsp;3.2, &#8220;File locations&#8221;</a> to locate the configuration file.
+               Look in the configuration file for a section labeled "Causal Clustering Configuration".
+            </p>
+            <section class="section" id="_minimum_configuration">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a class="anchor" href="#_minimum_configuration"></a>B.1.2.1.&nbsp;Minimum configuration
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <p>The minimum configuration for a Core instance requires setting the following:</p>
+               <div class="variablelist compact">
+                  <dl class="variablelist compact">
+                     <dt><span class="term"><code class="literal">dbms.mode</code></span></dt>
+                     <dd>The operating mode of this instance.
+                        Uncomment this setting and give it the value <code class="literal">CORE</code>.
+                     </dd>
+                     <dt><span class="term"><code class="literal">causal_clustering.minimum_core_cluster_size_at_formation</code></span></dt>
+                     <dd>The minimum number of Core machines in the cluster at formation.
+                        Uncomment this setting and give it the value <code class="literal">3</code>.
+                     </dd>
+                     <dt><span class="term"><code class="literal">causal_clustering.minimum_core_cluster_size_at_runtime</code></span></dt>
+                     <dd>The minimum number of Core instances which will exist in the consensus group.
+                        Uncomment this setting and give it the value <code class="literal">3</code>.
+                     </dd>
+                     <dt><span class="term"><code class="literal">causal_clustering.initial_discovery_members</code></span></dt>
+                     <dd>The network addresses of Core cluster members to be used to discover the cluster when this instance joins.
+                        Uncomment this setting and give it the value <code class="literal">localhost:5000,localhost:5001,localhost:5002</code>.
+                     </dd>
+                  </dl>
+               </div>
+            </section>
+            <section class="section" id="_additional_configuration">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a class="anchor" href="#_additional_configuration"></a>B.1.2.2.&nbsp;Additional configuration
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <p>Since we are setting up the Causal Cluster to run on a single machine, we must do some additional configuration that is not
+                  necessary when the instances are running on different servers.
+                  We configure the following:
+               </p>
+               <div class="variablelist compact">
+                  <dl class="variablelist compact">
+                     <dt><span class="term"><code class="literal">causal_clustering.discovery_listen_address</code></span></dt>
+                     <dd>The port used for discovery between machines.
+                        Uncomment this setting and give it the value <code class="literal">:5000</code>.
+                        On the other two instances, give them the values <code class="literal">:5001</code> and <code class="literal">:5002</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">causal_clustering.transaction_listen_address</code></span></dt>
+                     <dd>The internal transaction communication address.
+                        Uncomment this setting and give it the value <code class="literal">:6000</code>.
+                        On the other two instances, give them the values <code class="literal">:6001</code> and <code class="literal">:6002</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">causal_clustering.raft_listen_address</code></span></dt>
+                     <dd>The internal consensus mechanism address.
+                        Uncomment this setting and give it the value <code class="literal">:7000</code>
+                        On the other two instances give them the values <code class="literal">:7001</code> and <code class="literal">:7002</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.connector.bolt.listen_address</code></span></dt>
+                     <dd>The Bolt connector address.
+                        Uncomment this setting and give it the value <code class="literal">:7687</code>.
+                        On the other two instances give them the values <code class="literal">:7688</code> and <code class="literal">:7689</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.connector.http.listen_address</code></span></dt>
+                     <dd>The HTTP connector address.
+                        Uncomment this setting and give it the value <code class="literal">:7474</code>.
+                        On the other two instances give them the values <code class="literal">:7475</code> and <code class="literal">:7476</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.connector.https.listen_address</code></span></dt>
+                     <dd>The HTTPS connector address.
+                        Uncomment this setting and give it the value <code class="literal">:6474</code>.
+                        On the other two instances give them the values <code class="literal">:6475</code> and <code class="literal">:6476</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.backup.address</code></span></dt>
+                     <dd>The address for online backups.
+                        Uncomment this setting and give it the value <code class="literal">:6362</code>.
+                        On the other two instances give them the values <code class="literal">:6363</code> and <code class="literal">:6364</code>, respectively.
+                     </dd>
+                  </dl>
+               </div>
+            </section>
+         </section>
+         <section class="section" id="_start_the_neo4j_servers">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#_start_the_neo4j_servers"></a>B.1.3.&nbsp;Start the Neo4j servers
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>Start each Neo4j instance as usual.
+               The startup order does not matter.
+            </p><pre class="programlisting highlight"><code data-lang="shell">core-01$ ./bin/neo4j start</code></pre><pre class="programlisting highlight"><code data-lang="shell">core-02$ ./bin/neo4j start</code></pre><pre class="programlisting highlight"><code data-lang="shell">core-03$ ./bin/neo4j start</code></pre><div class="admonitionblock tip">
+               <table>
+                  <tbody>
+                     <tr>
+                        <td class="icon" rowspan="2"><i class="fa icon-tip" title="tip"></i></td>
+                        <th>Startup Time</th>
+                     </tr>
+                     <tr>
+                        <td class="content">
+                           <p>If you want to follow along with the startup of a server you can follow the messages in <span class="emphasis"><em>logs/neo4j.log</em></span>.
+                              On a Unix system issue the command <code class="literal">tail -f logs/neo4j.log</code>.
+                              On Windows Server run <code class="literal">Get-Content .\logs\neo4j.log -Tail 10 -Wait</code>.
+                              While an instance is joining the cluster, the server may appear unavailable.
+                              In the case where an instance is joining a cluster with lots of data, it may take a number of minutes for the new instance
+                              to download the data from the cluster and become available.
+                           </p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </section>
+         <section class="section" id="_check_the_status_of_the_cluster">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#_check_the_status_of_the_cluster"></a>B.1.4.&nbsp;Check the status of the cluster
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>Now the minimal cluster of three Core Servers is operational and ready to serve requests.
+               Connect to either of the three instances to check the cluster status.
+               Point your web browser to <span class="emphasis"><em>http://localhost:7474</em></span>.
+               Authenticate with the default <code class="literal">neo4j/neo4j</code> and set a new password.
+               These credentials are not shared between cluster members.
+               A new password must be set on each instance when connecting for the first time.
+               For production deployment we advise integrating the Neo4j cluster with your directory service.
+               See <a class="xref" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/ldap-integration/" title="7.5. Integration with LDAP">Section&nbsp;7.5, &#8220;Integration with LDAP&#8221;</a> for more details.
+            </p>
+            <p>Once you have authenticated you can check the status of the cluster by running the query: <code class="literal">CALL dbms.cluster.overview()</code>.
+               The output will look similar to the following.
+            </p>
+            <div class="table" id="d0e38540">
+               <table class="table" summary="Cluster overview with dbms.cluster.overview()" border="1">
+                  <caption class="table-title">Table&nbsp;B.1.&nbsp;Cluster overview with <code class="literal">dbms.cluster.overview()</code></caption>
+                  <colgroup>
+                     <col class="col_1"></col>
+                     <col class="col_2"></col>
+                     <col class="col_3"></col>
+                     <col class="col_4"></col>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th style="text-align: left; vertical-align: top; ">id</th>
+                        <th style="text-align: left; vertical-align: top; ">addresses</th>
+                        <th style="text-align: left; vertical-align: top; ">role</th>
+                        <th style="text-align: left; vertical-align: top; ">groups</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>08eb9305-53b9-4394-9237-0f0d63bb05d5</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7687, http://localhost:7474, https://localhost:6474]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>LEADER</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>cb0c729d-233c-452f-8f06-f2553e08f149</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7688, http://localhost:7475, https://localhost:6475]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>FOLLOWER</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>ded9eed2-dd3a-4574-bc08-6a569f91ec5c</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7689, http://localhost:7476, https://localhost:6476]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>FOLLOWER</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <p>The three Core instances in the cluster are operational.</p>
+         </section>
+         <section class="section" id="_test_the_cluster">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#_test_the_cluster"></a>B.1.5.&nbsp;Test the cluster
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>Now you can run queries to create nodes and relationships, and see that the data gets replicated in the cluster.</p>
+            <p>When developing an application against a Neo4j Causal Cluster it is not necessary to know about the roles of the cluster members.
+               The Neo4j Bolt driver creates sessions with access mode <span class="emphasis"><em>READ</em></span> or <span class="emphasis"><em>WRITE</em></span> on request.
+               It is the driver&#8217;s responsibility to identify the best cluster member to service the session according to need.
+            </p>
+            <p>When connecting directly with Neo4j Browser, however, we need to be more aware of the roles that the cluster members have.
+               It is easy to navigate from member to member by running the <code class="literal">:sysinfo</code> command.
+               The sysinfo view contains information about the Neo4j instance.
+               If the instance participates in a Causal Clustering cluster then this view contains a table: <span class="strong"><strong>Causal Clustering Cluster Members</strong></span>.
+               This table contains the same information as provided by the <code class="literal">dbms.cluster.overview()</code> procedure, but here you can also take action on the other members of the cluster.
+               Run the <code class="literal">:sysinfo</code> command and click the <code class="literal">Open</code> action on the instance that has the <span class="emphasis"><em>LEADER</em></span> role.
+               This opens a new Browser session against the Leader of the cluster.
+            </p>
+            <p>Authenticate and set a new password, as before.
+               Now you can run a query to create nodes and relationships.
+            </p><pre class="programlisting highlight"><code data-lang="cypher">UNWIND range(0, 100) AS value
+MERGE (person1:Person {id: value})
+MERGE (person2:Person {id: toInteger(100.0 * rand())})
+MERGE (person1)-[:FRIENDS]-&gt;(person2)</code></pre><p>When the query has executed choose an instance with the <span class="emphasis"><em>FOLLOWER</em></span> role from the sysinfo view.
+               Click the <code class="literal">Open</code> action to connect.
+               Now you can run a query to see that the data has been replicated.
+            </p><pre class="programlisting highlight"><code data-lang="cypher">MATCH path = (person:Person)-[:FRIENDS]-(friend)
+RETURN path
+LIMIT 10</code></pre></section>
+         <section class="section" id="_configure_the_read_replicas">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#_configure_the_read_replicas"></a>B.1.6.&nbsp;Configure the Read Replicas
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>Setting up the Read Replicas is similar to setting up the Cores, but simpler.</p>
+            <div class="orderedlist">
+               <ol class="orderedlist" type="1">
+                  <li class="listitem">In your working directory, rename the <span class="emphasis"><em>neo4j-enterprise-3.4.18</em></span> directory and name it <span class="emphasis"><em>replica-01/</em></span> or similar.
+                     The <span class="emphasis"><em>replica-01/</em></span> directory will contain the first Read Replica.
+                  </li>
+                  <li class="listitem">Complete the configuration (see below) for the first Core instance.
+                     Then make two copies of the <span class="emphasis"><em>replica-01/</em></span> directory and name them <span class="emphasis"><em>replica-02/</em></span> and <span class="emphasis"><em>replica-03/</em></span>.
+                  </li>
+                  <li class="listitem">Proceed with the configuration of the two copied instances.
+                     Those changes that are common to all three Read Replicas are now already in place for replicas number two and three.
+                  </li>
+               </ol>
+            </div>
+            <p>Configuring a Read Replica is similar to configuring a Core.
+               Read Replicas instances do not participate in quorum decisions, so their configuration is simpler.
+               All that a Read Replica needs to know is the addresses of Core Servers which they can bind to in order to discover the cluster.
+               See <a class="xref" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/clustering/lifecycle/#causal-clustering-discovery-protocol" title="4.2.2. Discovery protocol">Section&nbsp;4.2.2, &#8220;Discovery protocol&#8221;</a> for details.
+               Once it has completed the initial discovery, the Read Replica becomes aware of the currently available Core Servers and can
+               choose an appropriate one from which to catch up.
+               See <a class="xref" href="/web/20230509034507/https://neo4j.com/docs/operations-manual/3.4/clustering/lifecycle/#causal-clustering-catchup-protocol" title="4.2.6. Catchup protocol">Section&nbsp;4.2.6, &#8220;Catchup protocol&#8221;</a> for details.
+            </p>
+            <section class="section" id="_minimum_configuration_2">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a class="anchor" href="#_minimum_configuration_2"></a>B.1.6.1.&nbsp;Minimum configuration
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <p>The minimum configuration for a Read Replica instance requires setting the following:</p>
+               <div class="variablelist compact">
+                  <dl class="variablelist compact">
+                     <dt><span class="term"><code class="literal">dbms.mode</code></span></dt>
+                     <dd>The operating mode of this instance.
+                        Uncomment this setting and give it the value <code class="literal">READ_REPLICA</code>.
+                     </dd>
+                     <dt><span class="term"><code class="literal">causal_clustering.initial_discovery_members</code></span></dt>
+                     <dd>The network addresses of Core cluster members to be used to discover the cluster when this instance joins.
+                        Uncomment this setting and give it the value <code class="literal">localhost:5000,localhost:5001,localhost:5002</code>.
+                     </dd>
+                  </dl>
+               </div>
+            </section>
+            <section class="section" id="_additional_configuration_2">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h4 class="title"><a class="anchor" href="#_additional_configuration_2"></a>B.1.6.2.&nbsp;Additional configuration
+                        </h4>
+                     </div>
+                  </div>
+               </div>
+               <p>Similarly to the Core Cluster, we have to do some additional configuration to enable all the Read Replicas to run on the same
+                  machine.
+                  We configure the following:
+               </p>
+               <div class="variablelist compact">
+                  <dl class="variablelist compact">
+                     <dt><span class="term"><code class="literal">causal_clustering.transaction_listen_address</code></span></dt>
+                     <dd>The internal transaction communication address.
+                        Uncomment this setting and give it the value <code class="literal">:6003</code>.
+                        On the other two instances, give them the values <code class="literal">:6004</code> and <code class="literal">:6005</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.connector.bolt.listen_address</code></span></dt>
+                     <dd>The Bolt connector address.
+                        Uncomment this setting and give it the value <code class="literal">:7690</code>.
+                        On the other two instances, give them the values <code class="literal">:7691</code> and <code class="literal">:7692</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.connector.http.listen_address</code></span></dt>
+                     <dd>The HTTP connector address.
+                        Uncomment this setting and give it the value <code class="literal">:7477</code>.
+                        On the other two instances, give them the values <code class="literal">:7478</code> and <code class="literal">:7479</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.connector.https.listen_address</code></span></dt>
+                     <dd>The HTTPS connector address.
+                        Uncomment this setting and give it the value <code class="literal">:6477</code>.
+                        On the other two instances, give them the values <code class="literal">:6478</code> and <code class="literal">:6479</code>, respectively.
+                     </dd>
+                     <dt><span class="term"><code class="literal">dbms.backup.address</code></span></dt>
+                     <dd>The address for online backups.
+                        Uncomment this setting and give it the value <code class="literal">:6365</code>.
+                        On the other two instances give them the values <code class="literal">:6366</code> and <code class="literal">:6367</code>, respectively.
+                     </dd>
+                  </dl>
+               </div>
+            </section>
+         </section>
+         <section class="section" id="_test_the_cluster_with_read_replicas">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#_test_the_cluster_with_read_replicas"></a>B.1.7.&nbsp;Test the cluster with Read Replicas
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>Connect to any of the instances and run <code class="literal">CALL dbms.cluster.overview()</code> to see the new overview of the cluster.
+               With Read Replicas added the overview will look similar to:
+            </p>
+            <div class="table" id="d0e38808">
+               <table class="table" summary="Cluster overview with dbms.cluster.overview()" border="1">
+                  <caption class="table-title">Table&nbsp;B.2.&nbsp;Cluster overview with <code class="literal">dbms.cluster.overview()</code></caption>
+                  <colgroup>
+                     <col class="col_1"></col>
+                     <col class="col_2"></col>
+                     <col class="col_3"></col>
+                     <col class="col_4"></col>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th style="text-align: left; vertical-align: top; ">id</th>
+                        <th style="text-align: left; vertical-align: top; ">addresses</th>
+                        <th style="text-align: left; vertical-align: top; ">role</th>
+                        <th style="text-align: left; vertical-align: top; ">groups</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>08eb9305-53b9-4394-9237-0f0d63bb05d5</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7687, http://localhost:7474, https://localhost:6474]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>LEADER</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>cb0c729d-233c-452f-8f06-f2553e08f149</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7688, http://localhost:7475, https://localhost:6475]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>FOLLOWER</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>ded9eed2-dd3a-4574-bc08-6a569f91ec5c</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7689, http://localhost:7476, https://localhost:6476]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>FOLLOWER</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>00000000-0000-0000-0000-000000000000</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7690, http://localhost:7477, https://localhost:6477]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>READ_REPLICA</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>00000000-0000-0000-0000-000000000000</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7691, http://localhost:7478, https://localhost:6478]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>READ_REPLICA</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>00000000-0000-0000-0000-000000000000</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[bolt://localhost:7692, http://localhost:7479, https://localhost:6479]</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>READ_REPLICA</p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>[]</p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <p>To test that the Read Replicas have successfully caught up with the cluster use <code class="literal">:sysinfo</code> and click the <code class="literal">Open</code> action to connect to one of the Read Replicas.
+               Issue the same query as before:
+            </p><pre class="programlisting highlight"><code data-lang="cypher">MATCH path = (person:Person)-[:FRIENDS]-(friend)
+RETURN path
+LIMIT 10</code></pre></section>
+      </section>
+      <footer><script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//web.archive.org/web/20230509034507/https://www.google-analytics.com/analytics.js','ga');
+          //Allow Linker
+          ga('create', 'UA-1192232-34','auto', {'allowLinker': true});
+          ga('send', 'pageview');
+          // Load the plugin.
+          ga('require', 'linker');
+          // Define which domains to autoLink.
+          ga('linker:autoLink', ['neo4j.org','neo4j.com','neotechnology.com','graphdatabases.com','graphconnect.com']);
+        </script><script type="text/javascript">
+          document.write(unescape("%3Cscript src='//web.archive.org/web/20230509034507/https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script>Munchkin.init('773-GON-065');</script></footer>
+   </body>
+</html><!--
+     FILE ARCHIVED ON 03:45:07 May 09, 2023 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:47:18 Jul 04, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 1.044
+  exclusion.robots: 0.064
+  exclusion.robots.policy: 0.046
+  esindex: 0.016
+  cdx.remote: 29.082
+  LoadShardBlock: 287.371 (3)
+  PetaboxLoader3.datanode: 163.968 (4)
+  PetaboxLoader3.resolve: 233.472 (2)
+  load_resource: 139.967
+-->

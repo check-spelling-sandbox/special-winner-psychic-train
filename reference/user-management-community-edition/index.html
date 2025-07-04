@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+   <head><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app219.us.archive.org';v.server_ms=759;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=1B2M2Y8A" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/","20190812122159","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1565612519");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A" />
+<!-- End Wayback Rewrite JS Include -->
+
+      <meta charset="utf-8"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <title>A.3.&nbsp;User management for Community Edition - Appendix&nbsp;A.&nbsp;Reference</title>
+      <link rel="stylesheet" type="text/css" href="/web/20190812122159cs_/https://neo4j.com/docs/operations-manual/3.4/docbook.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190812122159cs_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190812122159cs_/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190812122159cs_/https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,300italic"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190812122159cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20190812122159cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/theme/neo.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20190812122159cs_/https://neo4j.com/docs/operations-manual/3.4/css/extra.css"></link>
+      <link rel="stylesheet" type="text/css" href="/web/20190812122159cs_/https://neo4j.com/docs/operations-manual/3.4/css/chunked-base.css"></link><script src="//web.archive.org/web/20190812122159js_/https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/addon/runmode/runmode.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/javascript/javascript.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/shell/shell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/powershell/powershell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/python/python.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/xml/xml.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/clike/clike.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/cypher/cypher.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/properties/properties.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/groovy/groovy.min.js" type="text/javascript"></script><script src="/web/20190812122159js_/https://neo4j.com/docs/operations-manual/3.4/javascript/colorize.js" type="text/javascript"></script><script src="/web/20190812122159js_/https://neo4j.com/docs/operations-manual/3.4/javascript/tabs-for-chunked.js" type="text/javascript"></script><script src="/web/20190812122159js_/https://neo4j.com/docs/operations-manual/3.4/javascript/mp-nav.js" type="text/javascript"></script><script src="/web/20190812122159js_/https://neo4j.com/docs/operations-manual/3.4/javascript/versionswitcher.js" type="text/javascript"></script><script src="/web/20190812122159js_/https://neo4j.com/docs/operations-manual/3.4/javascript/version.js" type="text/javascript"></script><script src="//web.archive.org/web/20190812122159js_/https://s3-eu-west-1.amazonaws.com/alpha.neohq.net/docs/new-manual/assets/search.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></meta>
+      <meta name="description" content="This section describes user and password management for Neo4j Community Edition."></meta>
+      <link rel="prev" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/reference/procedures/" title="A.2. Built-in procedures"></link>
+      <link rel="next" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/tutorial/" title="Appendix B. Tutorials"></link>
+      <link rel="shortcut icon" href="https://web.archive.org/web/20190812122159im_/https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico"></link><script>
+        $(document).ready(function() {
+          CodeMirror.colorize();
+          tabTheSource($('body'));
+          var $header = $('header').first();
+          $header.prepend(
+            $('<a href="../../" id="logo"><img src="https://web.archive.org/web/20190812122159/https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png" alt="Neo4j Logo"></img></a>')
+          );
+          var $sidebar = $('<div id="sidebar-wrapper"></div>');
+          $.get('toc.html', function (d){
+            $(d).appendTo($sidebar);
+            highlightToc();
+            highlightLibraryHeader();
+          });
+          $sidebar.insertAfter($('header').first());
+        });
+        </script></head>
+   <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;" toolbar-mode="auto">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20190812122159/https%3A//neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/"
+	    scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20190812122159" /><input type="submit" value="Go" />
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;">
+                    <a class="t" href="/web/20190812122159*/https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/" title="See a list of every capture for this URL">1 capture</a>
+          <div class="r" title="Timespan for captures of this URL">12 Aug 2019</div>
+          </div>
+        <div class="k">
+          <a href="" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap">Jul</td>
+            <td class="c" id="displayMonthEl" title="You are here: 12:21:59 Aug 12, 2019">AUG</td>
+            <td class="f" nowrap="nowrap">Sep</td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" /></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 12:21:59 Aug 12, 2019">12</td>
+            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0" /></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2018</td>
+            <td class="c" id="displayYearEl" title="You are here: 12:21:59 Aug 12, 2019">2019</td>
+            <td class="f" nowrap="nowrap">2020</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive" >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        </span>
+                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="/web/20190812122159/http://web.archive.org/screenshot/https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/"
+           id="wm-screenshot"
+           title="screenshot">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/webwidecrawl);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/webwidecrawl" target="_new"><span class="wm-title">Internet Archive</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  The Internet Archive discovers and captures web pages through many different web crawls.
+
+At any given time several distinct crawls are running, some for months, and some every day or longer.
+
+View the web archive through the <a href="http://archive.org/web/web.php">Wayback Machine</a>.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/wide00017)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/wide00017" target="_new"><span class="wm-title">Wide Crawl Number 17: Started August 3rd, 2018</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  <div><span style="font-size: 16px; font-family: Arial;">Wide17 was seeded with the "Total Domains" list of 256,796,456 URLs provided by&nbsp;</span><span style="font-size: 16px; font-family: Arial;"><a href="https://domains-index.com">Domains Index</a>&nbsp;</span><span style="font-size: 16px; font-family: Arial;">on June 26th, and crawled with max-hops set to "3" and de-duplication set "on".</span><br style="font-size: 16px; font-family: Arial;"></div><div>&nbsp;&nbsp;</div>
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+    </div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/reference/user-management-community-edition/","20190812122159",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A","https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+      <header>
+         <div class="searchbox">
+            <form id="search-form" class="search" name="search-form" role="search"><input id="search-form-input" name="q" title="search" type="search" lang="en" placeholder="Search Neo4j docs..." aria-label="Search Neo4j documentation" max-length="128" required="required"></input><input id="search-form-button" type="submit" value="Search"></input></form>
+         </div>
+         <ul class="documentation-library">
+            <li><a href="https://web.archive.org/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/">Operations Manual</a></li>
+            <li><a href="https://web.archive.org/web/20190812122159/https://neo4j.com/docs/developer-manual/3.4/">Developer Manual</a></li>
+            <li><a href="https://web.archive.org/web/20190812122159/https://neo4j.com/docs/ogm-manual/3.0/">OGM Manual</a></li>
+            <li><a href="https://web.archive.org/web/20190812122159/https://neo4j.com/docs/graph-algorithms/3.4/">Graph Algorithms</a></li>
+            <li><a href="https://web.archive.org/web/20190812122159/https://neo4j.com/docs/java-reference/3.4/">Java Reference</a></li>
+         </ul>
+         <nav id="header-nav"><span class="nav-previous"><a accesskey="p" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/reference/procedures/"><span class="fa fa-long-arrow-left" aria-hidden="true"></span>Built-in procedures</a></span><span class="nav-current">
+               <p class="nav-title hidden">A.3.&nbsp;User management for Community Edition</p></span><span class="nav-next"><a accesskey="n" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/tutorial/">Tutorials<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a></span></nav>
+      </header>
+      <div id="search-results" class="hidden"></div>
+      <section class="section" id="ref-user-management-ce">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h2 class="title" style="clear: both"><a class="anchor" href="#ref-user-management-ce"></a>A.3.&nbsp;User management for Community Edition
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <div class="abstract">
+            <p>This section describes user and password management for Neo4j Community Edition.</p>
+         </div>
+         <p>User and password management for Community Edition is a subset of the functionality available in Enterprise Edition.
+            The following sections provide comparisons between functionality available in Enterprise Edition and Community Edition:
+         </p>
+         <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+               <li class="listitem"><a class="xref" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/native-user-role-management/native-roles/" title="7.4.1. Native roles">Section&nbsp;7.4.1, &#8220;Native roles&#8221;</a>&#8201;&#8212;&#8201;Descriptions of roles and privileges.
+               </li>
+               <li class="listitem"><a class="xref" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/native-user-role-management/procedures/" title="7.4.4. Procedures for native user and role management">Section&nbsp;7.4.4, &#8220;Procedures for native user and role management&#8221;</a>&#8201;&#8212;&#8201;Listings of built-in procedures for user management.
+               </li>
+            </ul>
+         </div>
+         <p>The following is true for user management in Community Edition:</p>
+         <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+               <li class="listitem">It is possible to create multiple users.</li>
+               <li class="listitem">All users assume the privileges of an <code class="literal">admin</code> for the available functionality.
+               </li>
+            </ul>
+         </div>
+         <p>Users are managed by using built-in procedures through Cypher.
+            This section gives a list of all the security procedures for user management along with some simple examples.
+            Use Neo4j Browser or Neo4j Cypher Shell to run the examples provided.
+            Unless stated otherwise, all arguments to the procedures described in this section must be supplied.
+         </p>
+         <div class="informaltable">
+            <div class="table" id="d0e37624">
+               <table class="informaltable" border="1">
+                  <colgroup>
+                     <col class="col_1"></col>
+                     <col class="col_2"></col>
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th style="text-align: left; vertical-align: top; ">Name</th>
+                        <th style="text-align: left; vertical-align: top; ">Description</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><a class="link" href="#userauth-change-your-password-ce" title="A.3.1. Change the current user’s password">dbms.security.changePassword</a></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Change the current user&#8217;s password</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><a class="link" href="#userauth-add-user-ce" title="A.3.2. Add a user">dbms.security.createUser</a></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Add a user</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><a class="link" href="#userauth-delete-user-ce" title="A.3.3. Delete a user">dbms.security.deleteUser</a></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Delete a user</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><a class="link" href="#userauth-list-all-users-ce" title="A.3.4. List all native users">dbms.security.listUsers</a></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>List all users</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p><a class="link" href="#userauth-show-details-for-current-user-ce" title="A.3.5. Show details for the current user">dbms.showCurrentUser</a></p>
+                        </td>
+                        <td style="text-align: left; vertical-align: top; ">
+                           <p>Show details for the current user</p>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <section class="section" id="userauth-change-your-password-ce">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#userauth-change-your-password-ce"></a>A.3.1.&nbsp;Change the current user&#8217;s password
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>The <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-current-user">current user</a> is able to change their own password at any time.
+            </p>
+            <p><span class="strong"><strong>Syntax:</strong></span></p>
+            <p><code class="literal">CALL dbms.security.changePassword(<span class="emphasis"><em>password</em></span>)</code></p>
+            <p><span class="strong"><strong>Arguments:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37695">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                        <col class="col_2"></col>
+                        <col class="col_3"></col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th style="text-align: left; vertical-align: top; ">Name</th>
+                           <th style="text-align: left; vertical-align: top; ">Type</th>
+                           <th style="text-align: left; vertical-align: top; ">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">password</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>String</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is the new password for the current user.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <p><span class="strong"><strong>Exceptions:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37723">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                     </colgroup>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The password is the empty string.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The password is the same as the current user&#8217;s previous password.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="example" id="d0e37735">
+               <div class="example-title">Example&nbsp;A.2.&nbsp;Change the current user&#8217;s password</div>
+               <div class="example-contents">
+                  <p>The following example changes the password of the <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-current-user">current user</a> to '<span class="strong"><strong>h6u4%kr</strong></span>'.
+                  </p><pre class="programlisting highlight"><code data-lang="cypher">CALL dbms.security.changePassword('h6u4%kr')</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="userauth-add-user-ce">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#userauth-add-user-ce"></a>A.3.2.&nbsp;Add a user
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>The <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-current-user">current user</a> is able to add a <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-user">user</a> to the system.
+            </p>
+            <p><span class="strong"><strong>Syntax:</strong></span></p>
+            <p><code class="literal">CALL dbms.security.createUser(<span class="emphasis"><em>username</em></span>, <span class="emphasis"><em>password</em></span>, <span class="emphasis"><em>requirePasswordChange</em></span>)</code></p>
+            <p><span class="strong"><strong>Arguments:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37777">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                        <col class="col_2"></col>
+                        <col class="col_3"></col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th style="text-align: left; vertical-align: top; ">Name</th>
+                           <th style="text-align: left; vertical-align: top; ">Type</th>
+                           <th style="text-align: left; vertical-align: top; ">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">username</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>String</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is the user&#8217;s username.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">password</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>String</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is the user&#8217;s password.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">requirePasswordChange</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Boolean</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is optional, with a default of <code class="literal">true</code>. If this is <code class="literal">true</code>, (i) the user will be forced to change their password when they log in for the first time, and (ii) until the user has changed
+                                 their password, they will be forbidden from performing any other operation.
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <p><span class="strong"><strong>Exceptions:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37833">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                     </colgroup>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The username either contains characters other than the ASCII characters between <code class="literal">!</code> and <code class="literal">~</code>, or contains <code class="literal">:</code> and <code class="literal">,</code>.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The username is already in use within the system.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The password is the empty string.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="example" id="d0e37861">
+               <div class="example-title">Example&nbsp;A.3.&nbsp;Add a user</div>
+               <div class="example-contents">
+                  <p>The following example creates a <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-user">user</a> with the username '<span class="strong"><strong>johnsmith</strong></span>' and password '<span class="strong"><strong>h6u4%kr</strong></span>'.
+                     When the user '<span class="strong"><strong>johnsmith</strong></span>' logs in for the first time, he will be required to <a class="link" href="#userauth-change-your-password-ce" title="A.3.1. Change the current user’s password">change his password</a>.
+                  </p><pre class="programlisting highlight"><code data-lang="cypher">CALL dbms.security.createUser('johnsmith', 'h6u4%kr', true)</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="userauth-delete-user-ce">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#userauth-delete-user-ce"></a>A.3.3.&nbsp;Delete a user
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>The <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-current-user">current user</a> is able to delete permanently a <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-user">user</a> from the system.
+            </p>
+            <p><span class="strong"><strong>Syntax:</strong></span></p>
+            <p><code class="literal">CALL dbms.security.deleteUser(<span class="emphasis"><em>username</em></span>)</code></p>
+            <p><span class="strong"><strong>Arguments:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37906">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                        <col class="col_2"></col>
+                        <col class="col_3"></col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th style="text-align: left; vertical-align: top; ">Name</th>
+                           <th style="text-align: left; vertical-align: top; ">Type</th>
+                           <th style="text-align: left; vertical-align: top; ">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">username</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>String</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is the username of the <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-user">user</a> to be deleted.
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <p><span class="strong"><strong>Exceptions:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37937">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                     </colgroup>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The username does not exist in the system.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>The username matches that of the current user (i.e. deleting the current user is not permitted).</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <p><span class="strong"><strong>Considerations:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37952">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                     </colgroup>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>Deleting a user will terminate with immediate effect all of the user&#8217;s sessions and roll back any running transactions.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>As it is not possible for the current user to delete themselves, there will always be at least one user in the system.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="example" id="d0e37964">
+               <div class="example-title">Example&nbsp;A.4.&nbsp;Delete a user</div>
+               <div class="example-contents">
+                  <p>The following example deletes a <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-user">user</a> with the username '<span class="strong"><strong>janebrown</strong></span>'.
+                  </p><pre class="programlisting highlight"><code data-lang="cypher">CALL dbms.security.deleteUser('janebrown')</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="userauth-list-all-users-ce">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#userauth-list-all-users-ce"></a>A.3.4.&nbsp;List all native users
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>The <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-current-user">current user</a> is able to view the details of every <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-user">user</a> in the system.
+            </p>
+            <p><span class="strong"><strong>Syntax:</strong></span></p>
+            <p><code class="literal">CALL dbms.security.listUsers()</code></p>
+            <p><span class="strong"><strong>Returns:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e37997">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                        <col class="col_2"></col>
+                        <col class="col_3"></col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th style="text-align: left; vertical-align: top; ">Name</th>
+                           <th style="text-align: left; vertical-align: top; ">Type</th>
+                           <th style="text-align: left; vertical-align: top; ">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">username</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>String</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is the user&#8217;s username.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">flags</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>List&lt;String&gt;</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is a flag indicating whether the user needs to change their password.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="example" id="d0e38033">
+               <div class="example-title">Example&nbsp;A.5.&nbsp;List all users</div>
+               <div class="example-contents">
+                  <p>The following example shows the username for each <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-user">user</a> in the system, and whether the user needs to change their password.
+                  </p><pre class="programlisting highlight"><code data-lang="cypher">CALL dbms.security.listUsers()</code></pre><pre class="screen highlight"><code>+-----------------------------------------+
+| username | flags                        |
++-----------------------------------------+
+| "neo4j"  | []                           |
+| "anne"   | ["password_change_required"] |
+| "bill"   | []                           |
++-----------------------------------------+
+3 rows</code></pre></div>
+            </div>
+         </section>
+         <section class="section" id="userauth-show-details-for-current-user-ce">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h3 class="title"><a class="anchor" href="#userauth-show-details-for-current-user-ce"></a>A.3.5.&nbsp;Show details for the current user
+                     </h3>
+                  </div>
+               </div>
+            </div>
+            <p>The <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-current-user">current user</a> is able to view whether or not they need to change their password.
+            </p>
+            <p><span class="strong"><strong>Syntax:</strong></span></p>
+            <p><code class="literal">CALL dbms.showCurrentUser()</code></p>
+            <p><span class="strong"><strong>Returns:</strong></span></p>
+            <div class="informaltable">
+               <div class="table" id="d0e38062">
+                  <table class="informaltable" border="1">
+                     <colgroup>
+                        <col class="col_1"></col>
+                        <col class="col_2"></col>
+                        <col class="col_3"></col>
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th style="text-align: left; vertical-align: top; ">Name</th>
+                           <th style="text-align: left; vertical-align: top; ">Type</th>
+                           <th style="text-align: left; vertical-align: top; ">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">username</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>String</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is the user&#8217;s username.</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p><code class="literal">flags</code></p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>List&lt;String&gt;</p>
+                           </td>
+                           <td style="text-align: left; vertical-align: top; ">
+                              <p>This is a flag indicating whether the user needs change their password.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="example" id="d0e38098">
+               <div class="example-title">Example&nbsp;A.6.&nbsp;Show details for the current user</div>
+               <div class="example-contents">
+                  <p>The following example shows that the <a class="link" href="/web/20190812122159/https://neo4j.com/docs/operations-manual/3.4/authentication-authorization/terminology/#term-current-user">current user</a>&#8201;&#8212;&#8201;with the username '<span class="strong"><strong>johnsmith</strong></span>'&#8201;&#8212;&#8201;does not need to change his password.
+                  </p><pre class="programlisting highlight"><code data-lang="cypher">CALL dbms.showCurrentUser()</code></pre><pre class="screen highlight"><code>+---------------------+
+| username    | flags |
++---------------------+
+| "johnsmith" | []    |
++---------------------+
+1 row</code></pre></div>
+            </div>
+         </section>
+      </section>
+      <footer><script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//web.archive.org/web/20190812122159/https://www.google-analytics.com/analytics.js','ga');
+          //Allow Linker
+          ga('create', 'UA-1192232-34','auto', {'allowLinker': true});
+          ga('send', 'pageview');
+          // Load the plugin.
+          ga('require', 'linker');
+          // Define which domains to autoLink.
+          ga('linker:autoLink', ['neo4j.org','neo4j.com','neotechnology.com','graphdatabases.com','graphconnect.com']);
+        </script><script type="text/javascript">
+          document.write(unescape("%3Cscript src='//web.archive.org/web/20190812122159/https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script>Munchkin.init('773-GON-065');</script></footer>
+   </body>
+</html><!--
+     FILE ARCHIVED ON 12:21:59 Aug 12, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:43:25 Jul 04, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.927
+  exclusion.robots: 0.042
+  exclusion.robots.policy: 0.024
+  esindex: 0.015
+  cdx.remote: 14.61
+  LoadShardBlock: 407.694 (3)
+  PetaboxLoader3.datanode: 151.602 (4)
+  PetaboxLoader3.resolve: 436.759 (2)
+  load_resource: 291.245
+-->
