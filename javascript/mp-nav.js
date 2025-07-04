@@ -162,14 +162,4 @@ function enableTocToggle() {
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.516
-  exclusion.robots: 0.027
-  exclusion.robots.policy: 0.017
-  esindex: 0.009
-  cdx.remote: 6.092
-  LoadShardBlock: 63.555 (3)
-  PetaboxLoader3.datanode: 85.149 (4)
-  load_resource: 198.844
-  PetaboxLoader3.resolve: 171.041
 */

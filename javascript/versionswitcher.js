@@ -101,14 +101,4 @@ function versionSwitcher( $ )
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.657
-  exclusion.robots: 0.034
-  exclusion.robots.policy: 0.022
-  esindex: 0.012
-  cdx.remote: 5.952
-  LoadShardBlock: 598.653 (3)
-  PetaboxLoader3.datanode: 380.293 (4)
-  PetaboxLoader3.resolve: 1212.527 (2)
-  load_resource: 1026.637
 */

@@ -405,7 +405,7 @@ div.search-result-item-description {
 td.gsc-search-button > input.gsc-search-button, #search-form-button{
   border: none;
   font-size: 0;
-  background: #ffffff url('https://web.archive.org/web/20230531001154im_/https://neo4j.com/wp-content/themes/neo4jweb/assets/images/search-icon.svg') no-repeat center;
+  background: #ffffff url('../wp-content/themes/neo4jweb/assets/images/search-icon.svg') no-repeat center;
   background-size: 70%;
   min-width: 20px;
 }
@@ -793,15 +793,4 @@ section.enterprise-edition > div.titlepage .title:after {
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.644
-  exclusion.robots: 0.035
-  exclusion.robots.policy: 0.021
-  esindex: 0.013
-  cdx.remote: 8.607
-  LoadShardBlock: 368.557 (3)
-  PetaboxLoader3.datanode: 389.769 (5)
-  load_resource: 315.713
-  PetaboxLoader3.resolve: 110.823
-  loaddict: 101.104
 */

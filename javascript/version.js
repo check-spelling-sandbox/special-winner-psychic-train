@@ -43,14 +43,4 @@ window.docMeta = (function () {
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.836
-  exclusion.robots: 0.045
-  exclusion.robots.policy: 0.029
-  esindex: 0.016
-  cdx.remote: 11.69
-  LoadShardBlock: 512.287 (3)
-  PetaboxLoader3.resolve: 645.181 (5)
-  PetaboxLoader3.datanode: 125.662 (5)
-  load_resource: 343.118 (2)
 */

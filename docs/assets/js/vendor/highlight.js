@@ -23,14 +23,4 @@ var highlight=function(){"use strict";function e(t){return t instanceof Map?t.cl
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.991
-  exclusion.robots: 0.065
-  exclusion.robots.policy: 0.045
-  esindex: 0.022
-  cdx.remote: 35.702
-  LoadShardBlock: 497.339 (3)
-  PetaboxLoader3.datanode: 185.055 (4)
-  PetaboxLoader3.resolve: 791.117 (2)
-  load_resource: 503.151
 */

@@ -156,13 +156,4 @@ function getCodeExampleLanguage() {
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.707
-  exclusion.robots: 0.037
-  exclusion.robots.policy: 0.022
-  esindex: 0.013
-  cdx.remote: 16.673
-  LoadShardBlock: 209.817 (3)
-  PetaboxLoader3.datanode: 229.442 (4)
-  load_resource: 37.257
 */

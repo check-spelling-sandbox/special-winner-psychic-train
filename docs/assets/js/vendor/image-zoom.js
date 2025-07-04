@@ -24,14 +24,4 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.588
-  exclusion.robots: 0.026
-  exclusion.robots.policy: 0.016
-  esindex: 0.009
-  cdx.remote: 114.656
-  LoadShardBlock: 128.766 (3)
-  PetaboxLoader3.datanode: 128.175 (4)
-  load_resource: 63.714
-  PetaboxLoader3.resolve: 50.846
 */

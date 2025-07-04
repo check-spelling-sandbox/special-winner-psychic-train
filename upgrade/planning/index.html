@@ -3,42 +3,28 @@
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
-   <head><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
-<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app217.us.archive.org';v.server_ms=874;archive_analytics.send_pageview({});});</script>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=1B2M2Y8A" charset="utf-8"></script>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=1B2M2Y8A" charset="utf-8"></script>
-<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
-<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
-<script type="text/javascript">
-    __wm.init("https://web.archive.org/web");
-  __wm.wombat("https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/","20200128111224","https://web.archive.org/","web","https://web-static.archive.org/_static/",
-	      "1580209944");
-</script>
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A" />
-<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A" />
-<!-- End Wayback Rewrite JS Include -->
 
       <meta charset="utf-8"></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       <title>5.1.&nbsp;Upgrade planning - Chapter&nbsp;5.&nbsp;Upgrade</title>
-      <link rel="stylesheet" type="text/css" href="/web/20200128111224cs_/https://neo4j.com/docs/operations-manual/3.4/docbook.css"></link>
-      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111224cs_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
-      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111224cs_/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
-      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111224cs_/https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,300italic"></link>
-      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111224cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.css"></link>
-      <link rel="stylesheet" type="text/css" href="//web.archive.org/web/20200128111224cs_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/theme/neo.min.css"></link>
-      <link rel="stylesheet" type="text/css" href="/web/20200128111224cs_/https://neo4j.com/docs/operations-manual/3.4/css/extra.css"></link>
-      <link rel="stylesheet" type="text/css" href="/web/20200128111224cs_/https://neo4j.com/docs/operations-manual/3.4/css/chunked-base.css"></link><script src="//web.archive.org/web/20200128111224js_/https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/addon/runmode/runmode.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/javascript/javascript.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/shell/shell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/powershell/powershell.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/python/python.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/xml/xml.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/clike/clike.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/cypher/cypher.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/properties/properties.min.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/groovy/groovy.min.js" type="text/javascript"></script><script src="/web/20200128111224js_/https://neo4j.com/docs/operations-manual/3.4/javascript/colorize.js" type="text/javascript"></script><script src="/web/20200128111224js_/https://neo4j.com/docs/operations-manual/3.4/javascript/tabs-for-chunked.js" type="text/javascript"></script><script src="/web/20200128111224js_/https://neo4j.com/docs/operations-manual/3.4/javascript/mp-nav.js" type="text/javascript"></script><script src="/web/20200128111224js_/https://neo4j.com/docs/operations-manual/3.4/javascript/versionswitcher.js" type="text/javascript"></script><script src="/web/20200128111224js_/https://neo4j.com/docs/operations-manual/3.4/javascript/version.js" type="text/javascript"></script><script src="//web.archive.org/web/20200128111224js_/https://s3-eu-west-1.amazonaws.com/alpha.neohq.net/docs/new-manual/assets/search.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></meta>
+      <link rel="stylesheet" type="text/css" href="../../docbook.css"></link>
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,300italic"></link>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/theme/neo.min.css"></link>
+      <link rel="stylesheet" type="text/css" href="../../css/extra.css"></link>
+      <link rel="stylesheet" type="text/css" href="../../css/chunked-base.css"></link><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/codemirror.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/addon/runmode/runmode.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/javascript/javascript.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/shell/shell.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/powershell/powershell.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/python/python.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/xml/xml.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/clike/clike.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/cypher/cypher.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/properties/properties.min.js" type="text/javascript"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.36.0/mode/groovy/groovy.min.js" type="text/javascript"></script><script src="../../javascript/colorize.js" type="text/javascript"></script><script src="../../javascript/tabs-for-chunked.js" type="text/javascript"></script><script src="../../javascript/mp-nav.js" type="text/javascript"></script><script src="../../javascript/versionswitcher.js" type="text/javascript"></script><script src="../../javascript/version.js" type="text/javascript"></script><script src="https://s3-eu-west-1.amazonaws.com/alpha.neohq.net/docs/new-manual/assets/search.js" type="text/javascript"></script><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"></meta>
       <meta name="description" content="This section describes how to plan for an upgrade of Neo4j."></meta>
-      <link rel="prev" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/upgrade/" title="Chapter 5. Upgrade"></link>
-      <link rel="next" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/upgrade/deployment-upgrading/" title="5.2. Upgrade a single instance"></link>
-      <link rel="shortcut icon" href="https://web.archive.org/web/20200128111224im_/https://neo4j.com/wp-content/themes/neo4jweb/favicon.ico"></link><script>
+      <link rel="prev" href="../../upgrade/" title="Chapter 5. Upgrade"></link>
+      <link rel="next" href="../../upgrade/deployment-upgrading/" title="5.2. Upgrade a single instance"></link>
+      <link rel="shortcut icon" href="../../wp-content/themes/neo4jweb/favicon.ico"></link><script>
         $(document).ready(function() {
           CodeMirror.colorize();
           tabTheSource($('body'));
           var $header = $('header').first();
           $header.prepend(
-            $('<a href="../../" id="logo"><img src="https://web.archive.org/web/20200128111224/https://neo4j.com/wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png" alt="Neo4j Logo"></img></a>')
+            $('<a href="../../" id="logo"><img src="../../wp-content/themes/neo4jweb/assets/images/neo4j-logo-2015.png" alt="Neo4j Logo"></img></a>')
           );
           var $sidebar = $('<div id="sidebar-wrapper"></div>');
           $.get('toc.html', function (d){
@@ -49,133 +35,20 @@
           $sidebar.insertAfter($('header').first());
         });
         </script></head>
-   <body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
-<script>__wm.rw(0);</script>
-<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;" toolbar-mode="auto">
-<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
-<div id="donato" style="position:relative;width:100%;height:0;">
-  <div id="donato-base">
-    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20200128111224/https%3A//neo4j.com/docs/operations-manual/3.4/upgrade/planning/"
-	    scrolling="no" frameborder="0" style="width:100%; height:100%">
-    </iframe>
-  </div>
-</div><div id="wm-ipp-inside">
-  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
-    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
-      <a href="/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
-    </div>
-    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
-      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20200128111224" /><input type="submit" value="Go" />
-      </form>
-      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
-                <div class="s" id="wm-nav-captures" style="flex:1;">
-                    <a class="t" href="/web/20200128111224*/https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/" title="See a list of every capture for this URL">1 capture</a>
-          <div class="r" title="Timespan for captures of this URL">28 Jan 2020</div>
-          </div>
-        <div class="k">
-          <a href="" id="wm-graph-anchor">
-            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
-              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="n">
-      <table>
-        <tbody>
-          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
-          <tr class="m">
-            <td class="b" nowrap="nowrap">Dec</td>
-            <td class="c" id="displayMonthEl" title="You are here: 11:12:24 Jan 28, 2020">JAN</td>
-            <td class="f" nowrap="nowrap">Feb</td>
-          </tr>
-          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
-          <tr class="d">
-            <td class="b" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_off.png" alt="Previous capture" width="14" height="16" border="0" /></td>
-            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 11:12:24 Jan 28, 2020">28</td>
-            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0" /></td>
-          </tr>
-          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
-          <tr class="y">
-            <td class="b" nowrap="nowrap">2019</td>
-            <td class="c" id="displayYearEl" title="You are here: 11:12:24 Jan 28, 2020">2020</td>
-            <td class="f" nowrap="nowrap">2021</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
-      <div id="wm-btns" style="text-align:right;height:23px;">
-                <span class="xxs">
-          <div id="wm-save-snapshot-success">success</div>
-          <div id="wm-save-snapshot-fail">fail</div>
-          <a id="wm-save-snapshot-open" href="#" title="Share via My Web Archive" >
-            <span class="iconochive-web"></span>
-          </a>
-          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in">
-            <span class="iconochive-person"></span>
-          </a>
-          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
-        </span>
-                <a class="xxs" href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
-        <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
-      </div>
-      <div id="wm-share" class="xxs">
-        <a href="/web/20200128111224/http://web.archive.org/screenshot/https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/"
-           id="wm-screenshot"
-           title="screenshot">
-          <span class="wm-icon-screen-shot"></span>
-        </a>
-        <a href="#" id="wm-video" title="video">
-          <span class="iconochive-movies"></span>
-        </a>
-        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
-        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
-      </div>
-      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
-        <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
-      </div>
-    </div>
-  </div>
-    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
-        <div id="wm-capinfo-notice" source="api"></div>
-                <div id="wm-capinfo-collected-by">
-    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
-    <div style="padding:3px;position:relative" id="wm-collected-by-content">
-      <div style="display:inline-block;vertical-align:top;width:49%;">
-			<span class="c-logo" style="background-image:url(https://archive.org/services/img/wikipedia-eventstream)"></span>
-		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/wikipedia-eventstream" target="_new"><span class="wm-title">Wikipedia Eventstream</span></a></div>
-	      </div>
-    </div>
-    </div>
-    <div id="wm-capinfo-timestamps">
-    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
-    <div>
-      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
-      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
-    </div>
-    </div>
-  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/</div>
-<script type="text/javascript">//<![CDATA[
-__wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/planning/","20200128111224",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1B2M2Y8A","https://web-static.archive.org/_static/css/iconochive.css?v=1B2M2Y8A"], false);
-  __wm.rw(1);
-//]]></script>
-<!-- END WAYBACK TOOLBAR INSERT -->
  
       <header>
          <div class="searchbox">
             <form id="search-form" class="search" name="search-form" role="search"><input id="search-form-input" name="q" title="search" type="search" lang="en" placeholder="Search Neo4j docs..." aria-label="Search Neo4j documentation" max-length="128" required="required"></input><input id="search-form-button" type="submit" value="Search"></input></form>
          </div>
          <ul class="documentation-library">
-            <li><a href="https://web.archive.org/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/">Operations Manual</a></li>
-            <li><a href="https://web.archive.org/web/20200128111224/https://neo4j.com/docs/developer-manual/3.4/">Developer Manual</a></li>
-            <li><a href="https://web.archive.org/web/20200128111224/https://neo4j.com/docs/ogm-manual/3.0/">OGM Manual</a></li>
-            <li><a href="https://web.archive.org/web/20200128111224/https://neo4j.com/docs/graph-algorithms/3.4/">Graph Algorithms</a></li>
-            <li><a href="https://web.archive.org/web/20200128111224/https://neo4j.com/docs/java-reference/3.4/">Java Reference</a></li>
+            <li><a href="../../">Operations Manual</a></li>
+            <li><a href="../../docs/developer-manual/3.4/">Developer Manual</a></li>
+            <li><a href="../../docs/ogm-manual/3.0/">OGM Manual</a></li>
+            <li><a href="../../docs/graph-algorithms/3.4/">Graph Algorithms</a></li>
+            <li><a href="../../docs/java-reference/3.4/">Java Reference</a></li>
          </ul>
-         <nav id="header-nav"><span class="nav-previous"><a accesskey="p" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/upgrade/"><span class="fa fa-long-arrow-left" aria-hidden="true"></span>Upgrade</a></span><span class="nav-current">
-               <p class="nav-title hidden">5.1.&nbsp;Upgrade planning</p></span><span class="nav-next"><a accesskey="n" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/upgrade/deployment-upgrading/">Upgrade a single instance<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a></span></nav>
+         <nav id="header-nav"><span class="nav-previous"><a accesskey="p" href="../../upgrade/"><span class="fa fa-long-arrow-left" aria-hidden="true"></span>Upgrade</a></span><span class="nav-current">
+               <p class="nav-title hidden">5.1.&nbsp;Upgrade planning</p></span><span class="nav-next"><a accesskey="n" href="../../upgrade/deployment-upgrading/">Upgrade a single instance<span class="fa fa-long-arrow-right" aria-hidden="true"></span></a></span></nav>
       </header>
       <div id="search-results" class="hidden"></div>
       <section class="section" id="upgrade-planning">
@@ -241,7 +114,7 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
                   </li>
                   <li class="listitem">
                      <p class="simpara">Review Release Notes.</p>
-                     <p class="simpara">To view the details of the changes that are included in each version, see the <a class="link" href="https://web.archive.org/web/20200128111224/https://neo4j.com/release-notes" target="_top">Release Notes</a>.
+                     <p class="simpara">To view the details of the changes that are included in each version, see the <a class="link" href="../../release-notes" target="_top">Release Notes</a>.
                      </p>
                   </li>
                   <li class="listitem">
@@ -254,7 +127,7 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
                               Please ensure that you have taken such changes into account.
                            </li>
                            <li class="listitem">It is also useful to inspect the current configuration file and take note of any non-default settings.
-                              When upgrading, it is particularly important to note any custom values of the settings <code class="literal"><a class="link" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_dbms.directories.data" title="Table A.112. dbms.directories.data">dbms.directories.data</a></code> and <code class="literal"><a class="link" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/reference/configuration-settings/#config_dbms.active_database" title="Table A.94. dbms.active_database">dbms.active_database</a></code>.
+                              When upgrading, it is particularly important to note any custom values of the settings <code class="literal"><a class="link" href="../../reference/configuration-settings/#config_dbms.directories.data" title="Table A.112. dbms.directories.data">dbms.directories.data</a></code> and <code class="literal"><a class="link" href="../../reference/configuration-settings/#config_dbms.active_database" title="Table A.94. dbms.active_database">dbms.active_database</a></code>.
                               In cluster installations, pay attention to cluster-specific configuration settings, which may be different on different cluster
                               members.
                            </li>
@@ -263,7 +136,7 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
                   </li>
                   <li class="listitem">
                      <p class="simpara">Plan index upgrade.</p>
-                     <p class="simpara">Review <a class="xref" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/performance/index-configuration/" title="10.2. Index configuration">Section&nbsp;10.2, &#8220;Index configuration&#8221;</a> and determine whether you have indexes that ought to be rebuilt in order to take advantage of performance improvements.
+                     <p class="simpara">Review <a class="xref" href="../../performance/index-configuration/" title="10.2. Index configuration">Section&nbsp;10.2, &#8220;Index configuration&#8221;</a> and determine whether you have indexes that ought to be rebuilt in order to take advantage of performance improvements.
                         Include the rebuilding of these indexes in your test upgrade.
                      </p>
                   </li>
@@ -274,12 +147,12 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
                      </p>
                      <p class="simpara">In particular, the Cypher language may evolve between Neo4j versions.
                         For backward compatibility, Neo4j provides directives which enable you to explicitly select a previous Cypher language version.
-                        This is possible to do globally or for individual statements, as described in the <a href="/web/20200128111224/https://neo4j.com/docs/developer-manual/3.4/cypher/deprecations-additions-removals-compatibility/#cypher-compatibility" class="olink">Neo4j Developer Manual</a>.
+                        This is possible to do globally or for individual statements, as described in the <a href="../../docs/developer-manual/3.4/cypher/deprecations-additions-removals-compatibility/#cypher-compatibility" class="olink">Neo4j Developer Manual</a>.
                      </p>
                   </li>
                   <li class="listitem">
                      <p class="simpara">Upgrade custom plugins.</p>
-                     <p class="simpara">Check the <span class="emphasis"><em>plugins</em></span> directory (see <a class="xref" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/configuration/file-locations/" title="3.2. File locations">Section&nbsp;3.2, &#8220;File locations&#8221;</a>) to verify whether custom plugins are used in your deployment.
+                     <p class="simpara">Check the <span class="emphasis"><em>plugins</em></span> directory (see <a class="xref" href="../../configuration/file-locations/" title="3.2. File locations">Section&nbsp;3.2, &#8220;File locations&#8221;</a>) to verify whether custom plugins are used in your deployment.
                         Ensure that any plugins are compatible with Neo4j 3.4.17.
                      </p>
                      <div class="admonitionblock note">
@@ -300,7 +173,7 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
                   <li class="listitem">
                      <p class="simpara">Plan disk space requirements.</p>
                      <p class="simpara">An upgrade requires substantial free disk space, as it makes an entire copy of the database.
-                        For the upgrade, make sure to make available an additional ( 50% * size_of(<span class="emphasis"><em>database directory</em></span>), where the default <span class="emphasis"><em>database directory</em></span> is located in: <span class="emphasis"><em><a class="link" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/configuration/file-locations/" title="3.2. File locations">data</a>/databases/graph.db</em></span>).
+                        For the upgrade, make sure to make available an additional ( 50% * size_of(<span class="emphasis"><em>database directory</em></span>), where the default <span class="emphasis"><em>database directory</em></span> is located in: <span class="emphasis"><em><a class="link" href="../../configuration/file-locations/" title="3.2. File locations">data</a>/databases/graph.db</em></span>).
                         In addition to this, do not forget to reserve the disk space needed for the pre-upgrade backup.
                      </p>
                      <p class="simpara">The upgraded database may require slightly larger data files overall.</p>
@@ -314,7 +187,7 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
                   </li>
                   <li class="listitem">
                      <p class="simpara">Review the logs.</p>
-                     <p class="simpara">The <a class="link" href="/web/20200128111224/https://neo4j.com/docs/operations-manual/3.4/configuration/file-locations/#file-locations-log-files" title="3.2.2. Log files"><span class="emphasis"><em>neo4j.log</em></span></a> file contains valuable information on how many steps the upgrade will involve and how far it has progressed.
+                     <p class="simpara">The <a class="link" href="../../configuration/file-locations/#file-locations-log-files" title="3.2.2. Log files"><span class="emphasis"><em>neo4j.log</em></span></a> file contains valuable information on how many steps the upgrade will involve and how far it has progressed.
                         For large upgrades, it is a good idea to monitor this log continuously.
                         Below is a sample of what the log may look like:
                      </p><pre class="screen highlight"><code>2018-09-18 13:24:23.243+0000 INFO  Starting...
@@ -348,27 +221,15 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
                   </div>
                </div>
             </div>
-            <p>In addition to the steps outlined in this chapter, it is valuable to review the <a class="link" href="https://web.archive.org/web/20200128111224/https://neo4j.com/guides/upgrade/" target="_top"><span class="emphasis"><em>Upgrade guide</em></span> at neo4j.com</a>.
+            <p>In addition to the steps outlined in this chapter, it is valuable to review the <a class="link" href="../../guides/upgrade/" target="_top"><span class="emphasis"><em>Upgrade guide</em></span> at neo4j.com</a>.
                The upgrade guide is  maintained by Neo4j Customer Support, and contains valuable information about upgrade actions particular
                to this release.
             </p>
          </section>
       </section>
       <footer><script type="text/javascript">
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//web.archive.org/web/20200128111224/https://www.google-analytics.com/analytics.js','ga');
-          //Allow Linker
-          ga('create', 'UA-1192232-34','auto', {'allowLinker': true});
-          ga('send', 'pageview');
-          // Load the plugin.
-          ga('require', 'linker');
-          // Define which domains to autoLink.
-          ga('linker:autoLink', ['neo4j.org','neo4j.com','neotechnology.com','graphdatabases.com','graphconnect.com']);
         </script><script type="text/javascript">
-          document.write(unescape("%3Cscript src='//web.archive.org/web/20200128111224/https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
-        </script><script>Munchkin.init('773-GON-065');</script></footer>
+        </script><script>;</script></footer>
    </body>
 </html><!--
      FILE ARCHIVED ON 11:12:24 Jan 28, 2020 AND RETRIEVED FROM THE
@@ -379,14 +240,4 @@ __wm.bt(750,27,25,2,"web","https://neo4j.com/docs/operations-manual/3.4/upgrade/
      SECTION 108(a)(3)).
 -->
 <!--
-playback timings (ms):
-  captures_list: 0.542
-  exclusion.robots: 0.027
-  exclusion.robots.policy: 0.016
-  esindex: 0.009
-  cdx.remote: 5.191
-  LoadShardBlock: 653.949 (3)
-  PetaboxLoader3.resolve: 675.059 (4)
-  PetaboxLoader3.datanode: 134.062 (4)
-  load_resource: 186.139
 -->

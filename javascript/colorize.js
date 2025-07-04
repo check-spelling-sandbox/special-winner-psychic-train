@@ -75,15 +75,4 @@ CodeMirror.colorize = (function() {
      SECTION 108(a)(3)).
 */
 /*
-playback timings (ms):
-  captures_list: 0.753
-  exclusion.robots: 0.041
-  exclusion.robots.policy: 0.025
-  esindex: 0.014
-  cdx.remote: 88.461
-  LoadShardBlock: 1386.284 (3)
-  PetaboxLoader3.resolve: 1187.462 (4)
-  PetaboxLoader3.datanode: 473.352 (5)
-  load_resource: 388.214
-  loaddict: 116.096
 */
